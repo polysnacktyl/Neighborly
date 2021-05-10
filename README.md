@@ -1,0 +1,1 @@
+[MERN stack auth0 tutorial](https://auth0.com/blog/complete-guide-to-react-user-authentication/) by [Dan Arias](https://auth0.com/blog/authors/dan-arias/)
