@@ -26,6 +26,7 @@
     "if-env": "^1.0.4",
     "jwks-rsa": "^2.0.3",
     "mongoose": "^5.12.7",
+    "mongoose-unique-validator": "^2.0.3",
     "react-bootstrap": "^1.5.2",
     "react-router-dom": "^5.2.0"
   },
