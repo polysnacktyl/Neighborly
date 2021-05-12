@@ -11,21 +11,32 @@ const MainNav = () => (
     >
       Home
     </NavLink>
+    
     <NavLink
       to="/profile"
       exact
       className="nav-link"
       activeClassName="router-link-exact-active"
     >
-      Profile
+      User Dashboard
     </NavLink>
+
+    <NavLink
+      to="/community"
+      exact
+      className="nav-link"
+      activeClassName="router-link-exact-active"
+    >
+      Community Dashboard
+    </NavLink>
+
     <NavLink
       to="/books"
       exact
       className="nav-link"
       activeClassName="router-link-exact-active"
     >
-      /books
+      Books
     </NavLink>
   </div>
 );

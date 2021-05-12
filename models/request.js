@@ -1,9 +1,11 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-import userID from "./user";
+const User = require("./user")
+
 
 const requestSchema = new Schema({
-  userID,
+  User,
+  reqID: {type: String, required: true, unique: true},
   title: { type: String, required: true },
   date: { type: Date, default: Date.now },
   message: { type: String, required: true },
