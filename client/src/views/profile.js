@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import API from "../utils/API";
 
 const Profile = () => {
   const { user } = useAuth0();
-  const { name, picture, email } = user;
+  // const { name, picture, email } = user;
 
   //wait for the page to finish loading
   function ready(newUser) {
@@ -25,35 +26,42 @@ const Profile = () => {
     API.saveUser({
       userID: userID[1],
       userEmail: userEmail
-      
+
     })
       .catch(err => console.log(err));
   })
 
   return (
     <div>
-      <div className="row align-items-center profile-header">
-        <div className="col-md-2 mb-3">
-          <img
-            src={picture}
-            alt="Profile"
-            className="rounded-circle img-fluid profile-picture mb-3 mb-md-0"
-          />
-        </div>
-        <div className="col-md text-center text-md-left">
-          <h2>{name}</h2>
-          <p className="lead text-muted">{email}</p>
+
+      <div class="card text-center" style={{ width: "18rem" }}>
+        <div class="card-body">
+          <h5 class="card-title">Requests</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <Link to="/requests">
+            <a className="btn btn-primary">Go somewhere</a>
+          </Link>
         </div>
       </div>
-      <div className="row">
-        <pre className="col-12 text-light bg-dark p-4">
-          {JSON.stringify(user, null, 2)}
-        </pre>
+
+      <div class="card text-center" style={{ width: "18rem" }}>
+        <div class="card-body">
+          <h5 class="card-title">Volunteer Calendar</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <Link to="/volunteer">
+            <a className="btn btn-primary">Go somewhere</a>
+          </Link>
+        </div>
       </div>
-      <div className="row">
-        <pre className="col-12 text-light bg-dark p-4">
-          <p>presently displaying user info from json object gleaned from google account when they signup/login</p>
-        </pre>
+
+      <div class="card text-center" style={{ width: "18rem" }}>
+        <div class="card-body">
+          <h5 class="card-title">Resources</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <Link to="/resources">
+            <a className="btn btn-primary">Go somewhere</a>
+          </Link>
+        </div>
       </div>
     </div>
   );
