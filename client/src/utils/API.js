@@ -50,7 +50,7 @@ export default {
   },
   // Saves a resource to the database
   saveResource: function (resourceData) {
-    return axios.post("/api/resources/", resourceData);
+    return axios.post("/api/resources", resourceData);
   }
 };
 

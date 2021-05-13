@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { useAuth0 } from "@auth0/auth0-react";
 import API from "../utils/API";
+import UserContext from "../utils/userContext"
+
+
 const Profile = () => {
-  const { user } = useAuth0();
+  const { user } = useContext(UserContext)
   // const { name, picture, email } = user;
   //wait for the page to finish loading
   function ready(newUser) {

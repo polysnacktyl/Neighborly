@@ -39,7 +39,7 @@ function ResourceDetails(props) {
             </Row>
             <Row>
                 <Col size="md-2">
-                    <Link to="/">user dashboard</Link>
+                    <Link to="/resources">back to all resources</Link>
                 </Col>
             </Row>
         </Container>
