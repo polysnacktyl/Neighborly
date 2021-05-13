@@ -9,8 +9,10 @@ import Resources from "./resource";
 import ResourceDetails from "./resourceDetails";
 import Requests from "./requests"
 import RequestsDetails from "./requestsDetails"
+import communityRequests from "./communityRequests";
+import Offers from "./Offers";
+import Calendar from "./Calendar";
 
 
 
-
-export { Home, Profile, Books, Detail, Shifts, ShiftDetails, Resources, ResourceDetails, Community, Requests, RequestsDetails };
+export { Home, Profile, Books, Detail, Shifts, ShiftDetails, Resources, ResourceDetails, Community, Offers, communityRequests, Calendar, Requests, RequestsDetails };
