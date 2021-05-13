@@ -18,6 +18,14 @@ export function TextArea(props) {
   );
 }
 
+export function Radio(props) {
+  return (
+    <div className="form-group">
+      <input type="radio" value="Available"{...props} /> I am willing to help out!
+    </div>
+  );
+}
+
 export function FormBtn(props) {
   return (
     <button {...props} style={{ float: "right", marginBottom: 10 }} className="btn btn-success">

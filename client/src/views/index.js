@@ -7,4 +7,9 @@ import ShiftDetails from "./ShiftDetails";
 import Community from "./Community";
 
 
-export { Home, Profile, Books, Detail, Shifts, ShiftDetails, Community };
+
+import Resources from "./resource";
+import ResourceDetails from "./resourceDetails";
+
+
+export { Home, Profile, Books, Detail, Shifts, ShiftDetails, Resources, ResourceDetails, Community };
