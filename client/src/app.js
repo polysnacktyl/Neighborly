@@ -25,7 +25,8 @@ const App = () => {
           <ProtectedRoute exact path="/resources" component={Resources} />
           <ProtectedRoute exact path="/resources/:id" component={ResourceDetails} />
           <ProtectedRoute exact path="/community_requests" component={communityRequests} />
-        <ProtectedRoute exact path="/community_calendar" component={Calendar} />
+          <ProtectedRoute exact path="/community_offers" component={Offers} />
+          <ProtectedRoute exact path="/community_calendar" component={Calendar} />
           <Route><NoMatch /></Route>
         </Switch>
         <Footer />
