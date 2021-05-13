@@ -1,28 +1,54 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { Col, Row, Container } from "../components/Grid";
 
 function Community() {
     return (
-        <div className="text-center"
-            style={{
-                color: "#00ffcc",
-                fontSize: "50px",
-                fontWeight: "bolder",
-                textShadow: "2px 2px #006600"
-            }}>
-            <p>
-                COMMUNITY CALENDAR
-                </p>
-            <div className="text-center"
-                style={{
-                    color: "#006600",
-                    fontSize: "16px",
-                    textShadow: "2px 2px #00ffcc"
-                }}>
-                <p>
-                    This is a placeholder until actual content arrives😊
-                    </p>
-            </div>
-        </div>
+
+        <Container fluid>
+            <Row>
+                <Col size="md-12">
+                    <h1 className="text-center">
+                        Our Community
+              </h1>
+                </Col>
+            </Row>
+            <Row>
+                <Col size="md-4">
+                    <div className="card text-center" style={{ width: "18rem" }}>
+                        <div className="card-body">
+                            <h5 className="card-title">Request</h5>
+                            <p className="card-text">Submit a new request or fulfil a neighbor's request</p>
+                            <Link to="/community_requests">
+                                <button className="btn btn-primary">View Requests</button>
+                            </Link>
+                        </div>
+                    </div>
+                </Col>
+                <Col size="md-4">
+                    <div className="card text-center" style={{ width: "18rem" }}>
+                        <div className="card-body">
+                            <h5 className="card-title">Offers</h5>
+                            <p className="card-text">Submit a new offer or fulfil an existing offer</p>
+                            <Link to="/community_offers">
+                                <button className="btn btn-primary">View Offers</button>
+                            </Link>
+                        </div>
+                    </div>
+                </Col>
+                <Col size="md-4">
+                    <div className="card text-center" style={{ width: "18rem" }}>
+                        <div className="card-body">
+                            <h5 className="card-title">Calendar</h5>
+                            <p className="card-text">Calendar of upcoming volunteer events happening in the community</p>
+                            <Link to="/community_calendar">
+                                <button className="btn btn-primary">View Calendar</button>
+                            </Link>
+                        </div>
+                    </div>
+                </Col>
+            </Row>
+        </Container>
     );
 }
 

@@ -7,7 +7,10 @@ import ShiftDetails from "./ShiftDetails";
 import Community from "./Community";
 import Resources from "./resource";
 import ResourceDetails from "./resourceDetails";
+import communityRequests from "./communityRequests";
+import Offers from "./Offers";
+import Calendar from "./Calendar";
 
 
 
-export { Home, Profile, Books, Detail, Shifts, ShiftDetails, Resources, ResourceDetails, Community };
+export { Home, Profile, Books, Detail, Shifts, ShiftDetails, Resources, ResourceDetails, Community, Offers, communityRequests, Calendar };
