@@ -51,7 +51,22 @@ export default {
   // Saves a resource to the database
   saveResource: function (resourceData) {
     return axios.post("/api/resources/", resourceData);
-  }
+  },
+  getRequests: function () {
+    return axios.get("/api/requests");
+  },
+  // Gets the book with the given id
+  getRequest: function (id) {
+    return axios.get("/api/requests/" + id);
+  },
+  // Deletes the book with the given id
+  deleteRequests: function (id) {
+    return axios.delete("/api/requests/" + id);
+  },
+  // Saves a book to the database
+  saveRequests: function (requestsData) {
+    return axios.post("/api/requests/", requestsData);
+  },
 };
 
 

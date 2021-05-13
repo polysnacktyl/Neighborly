@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Route, Switch } from "react-router-dom";
 import NoMatch from "./views/NoMatch";
 import { NavBar, Footer } from "./components";
-import { Home, Profile, Books, Detail, Shifts, ShiftDetails, Resources, ResourceDetails, Community } from "./views";
+import { Home, Profile, Books, Detail, Shifts, ShiftDetails, Resources, ResourceDetails, Community, Requests, RequestsDetails } from "./views";
 import ProtectedRoute from "./auth/protected-route";
 import "./app.css";
 
@@ -21,6 +21,8 @@ const App = () => {
         <ProtectedRoute exact path="/shifts/:id" component={ShiftDetails} />
         <ProtectedRoute exact path="/resources" component={Resources} />
         <ProtectedRoute exact path="/resources/:id" component={ResourceDetails} />
+        <ProtectedRoute exact path="/requests" component={Requests} />
+        <ProtectedRoute exact path="/requests/:id" component={RequestsDetails} />
         <Route><NoMatch /></Route>
       </Switch>
       <Footer />

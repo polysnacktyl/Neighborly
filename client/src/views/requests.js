@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
-import requests from "../../../models/requests";
+
 
 function Requests() {
   // Setting our component's initial state
@@ -44,11 +44,10 @@ function Requests() {
   // Then reload Requests from the database
   function handleFormSubmit(event) {
     event.preventDefault();
-    if (formObject.title && formObject.author) {
+    if (formObject.title && formObject.requests) {
       API.saveRequests({
         title: formObject.title,
-        author: formObject.author,
-        synopsis: formObject.synopsis
+        requests: formObject.requests,
       })
         .then(res => loadRequests())
         .catch(err => console.log(err));
@@ -66,15 +65,15 @@ function Requests() {
               <Input
                 onChange={handleInputChange}
                 name="title"
-                placeholder="Title (required)"
+                placeholder="title (required)"
               />
               <TextArea
                 onChange={handleInputChange}
-                name="Request"
-                placeholder="Request (required)"
+                name="requests"
+                placeholder="requests (required)"
               />
               <FormBtn
-                disabled={!(formObject.author && formObject.title)}
+                disabled={!(formObject.title && formObject.requests)}
                 onClick={handleFormSubmit}
               >
                 Submit Request
@@ -108,4 +107,4 @@ function Requests() {
   }
 
 
-export default requests;
+export default Requests;
