@@ -65,7 +65,7 @@ export default {
   },
   // Saves a book to the database
   saveRequests: function (requestsData) {
-    return axios.post("/api/requests", requestsData);
+    return axios.post("/api/requests/", requestsData);
   }
   };
 

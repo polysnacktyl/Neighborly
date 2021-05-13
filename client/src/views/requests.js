@@ -44,10 +44,10 @@ function Requests() {
   // Then reload Requests from the database
   function handleFormSubmit(event) {
     event.preventDefault();
-    if (formObject.title && formObject.requests) {
+    if (formObject.title && formObject.request) {
       API.saveRequests({
         title: formObject.title,
-        requests: formObject.requests,
+        request: formObject.request,
       })
         .then(res => loadRequests())
         .catch(err => console.log(err));
@@ -69,11 +69,11 @@ function Requests() {
               />
               <TextArea
                 onChange={handleInputChange}
-                name="requests"
-                placeholder="requests (required)"
+                name="request"
+                placeholder="request (required)"
               />
               <FormBtn
-                disabled={!(formObject.title && formObject.requests)}
+                disabled={!(formObject.title && formObject.request)}
                 onClick={handleFormSubmit}
               >
                 Submit Request
@@ -90,7 +90,7 @@ function Requests() {
                   <ListItem key={requests._id}>
                     <Link to={"/requests/" + requests._id}>
                       <strong>
-                        {requests.title}, {requests.requests}
+                        {requests.title}, {requests.request}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => deleteRequests(requests._id)} />
