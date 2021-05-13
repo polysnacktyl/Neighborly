@@ -15,11 +15,6 @@ const App = () => {
         <Route exact path="/"> <Home /></Route>
         <ProtectedRoute path="/profile" component={Profile}/>
         <ProtectedRoute path="/community" component={Community} />
-        <ProtectedRoute exact path="/books" component={Books}/>
-        <ProtectedRoute exact path="/books/:id" component={Detail}/>
-        <ProtectedRoute exact path="/shifts" component={Shifts}/> 
-        <ProtectedRoute exact path="/shifts/:id" component={ShiftDetails}/>
-        <ProtectedRoute path="/profile" component={Profile} />
         <ProtectedRoute exact path="/books" component={Books} />
         <ProtectedRoute exact path="/books/:id" component={Detail} />
         <ProtectedRoute exact path="/shifts" component={Shifts} />
