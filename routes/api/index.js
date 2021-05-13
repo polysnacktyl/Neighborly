@@ -11,6 +11,6 @@ router.use("/books", bookRoutes);
 router.use("/user", userRoutes);
 router.use("/shifts", shiftsRoutes);
 router.use("/resources", resourceRoutes);
-router.use("/request", requestsRoutes);
+router.use("/requests", requestsRoutes);
 
 module.exports = router;
