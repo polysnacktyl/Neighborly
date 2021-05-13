@@ -8,7 +8,7 @@ function Calendar() {
                     color: "#99ffcc",
                     fontWeight: "bolder",
                     fontSize: "24px",
-                    textShadow: "2px, 2px, #004d26"
+                    textShadow: "2px 2px #004d26"
                 }}>
                 Community Calendar
             </p>
