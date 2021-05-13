@@ -1,24 +1,25 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
-// import { useAuth0 } from "@auth0/auth0-react";
+import { BrowserRouter as Route, Switch } from "react-router-dom";
+import NoMatch from "./views/NoMatch";
 import { NavBar, Footer } from "./components";
-import { Home, Profile, Books } from "./views";
+import { Home, Profile, Books, Detail, Shifts, ShiftDetails } from "./views";
 import ProtectedRoute from "./auth/protected-route";
-
 import "./app.css";
 
 const App = () => {
 
   return (
-    <div id="app" className="d-flex flex-column h-100">
+    <div>
       <NavBar />
-      <div className="container flex-grow-1">
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <ProtectedRoute path="/profile" component={Profile} />
-          <ProtectedRoute path="/books" component={Books} />
-        </Switch>
-      </div>
+      <Switch>
+        <Route exact path="/"> <Home /></Route>
+        <ProtectedRoute path="/profile" component={Profile}/>
+        <ProtectedRoute exact path="/books" component={Books}/>
+        <ProtectedRoute exact path="/books/:id" component={Detail}/>
+        <ProtectedRoute exact path="/shifts" component={Shifts}/> 
+        <ProtectedRoute exact path="/shifts/:id" component={ShiftDetails}/>
+        <Route><NoMatch /></Route>
+      </Switch>
       <Footer />
     </div>
   );

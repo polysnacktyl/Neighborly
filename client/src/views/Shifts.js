@@ -6,29 +6,29 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 
-function Books() {
+function Shifts() {
   // Setting our component's initial state
-  const [books, setBooks] = useState([])
+  const [shifts, setShifts] = useState([])
   const [formObject, setFormObject] = useState({})
 
   // Load all books and store them with setBooks
   useEffect(() => {
-    loadBooks()
+    loadShifts()
   }, [])
 
   // Loads all books and sets them to books
-  function loadBooks() {
-    API.getBooks()
+  function loadShifts() {
+    API.getShifts()
       .then(res =>
-        setBooks(res.data)
+        setShifts(res.data)
       )
       .catch(err => console.log(err));
   };
 
   // Deletes a book from the database with a given id, then reloads books from the db
-  function deleteBook(id) {
-    API.deleteBook(id)
-      .then(res => loadBooks())
+  function deleteShift(id) {
+    API.deleteShift(id)
+      .then(res => loadShifts())
       .catch(err => console.log(err));
   }
 
@@ -42,13 +42,15 @@ function Books() {
   // Then reload books from the database
   function handleFormSubmit(event) {
     event.preventDefault();
-    if (formObject.title && formObject.author) {
-      API.saveBook({
-        title: formObject.title,
-        author: formObject.author,
-        synopsis: formObject.synopsis
+    if (formObject.eventTitle && formObject.eventLocation) {
+      API.saveShift({
+        // userID: this.userID, 
+        // userEmail: this.userEmail,
+        eventTitle: formObject.eventTitle,
+        eventLocation: formObject.eventLocation,
+        eventDetails: formObject.eventDetails
       })
-        .then(res => loadBooks())
+        .then(res => loadShifts())
         .catch(err => console.log(err));
     }
   };
@@ -57,47 +59,41 @@ function Books() {
     <Container fluid>
       <Row>
         <Col size="md-6">
-          {/* <Jumbotron>
-              <h1>What Books Should I Read?</h1>
-            </Jumbotron> */}
           <form>
             <Input
               onChange={handleInputChange}
-              name="title"
-              placeholder="Title (required)"
+              name="eventTitle"
+              placeholder="Event (required)"
             />
             <Input
               onChange={handleInputChange}
-              name="author"
-              placeholder="Author (required)"
+              name="eventLocation"
+              placeholder="Location (required)"
             />
             <TextArea
               onChange={handleInputChange}
-              name="synopsis"
-              placeholder="Synopsis (Optional)"
+              name="eventDetails"
+              placeholder="Details"
             />
             <FormBtn
-                disabled={!(formObject.author && formObject.title)}
+                disabled={!(formObject.eventTitle && formObject.eventDetails)}
                 onClick={handleFormSubmit}
               >
-                Claim Shift
+                Post Opportunity
               </FormBtn>
           </form>
         </Col>
         <Col size="md-6 sm-12">
-          {/* <Jumbotron>
-              <h1>Books On My List</h1>
-            </Jumbotron> */}
-          {books.length ? (
+          {shifts.length ? (
             <List>
-              {books.map(book => (
-                <ListItem key={book._id}>
-                  <Link to={"/books/" + book._id}>
+              {shifts.map(shifts => (
+                <ListItem key={shifts._id}>
+                  <Link to={"/shifts/" + shifts._id}>
                     <strong>
-                      {book.title} by {book.author}
+                      {shifts.eventTitle} at {shifts.eventLocation}
                     </strong>
                   </Link>
-                  <DeleteBtn onClick={() => deleteBook(book._id)} />
+                  <DeleteBtn onClick={() => deleteShift(shifts._id)} />
                 </ListItem>
               ))}
             </List>
@@ -111,4 +107,4 @@ function Books() {
 }
 
 
-export default Books;
+export default Shifts;

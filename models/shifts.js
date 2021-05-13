@@ -4,10 +4,11 @@ var uniqueValidator = require('mongoose-unique-validator')
 
 const ShiftSchema = new mongoose.Schema({
     //claimed by 
-    userID: { type: String },
-    userEmail: { type: String },
+    // userID: { type: String },
+    // userEmail: { type: String },
     eventTitle: { type: String },
     eventLocation: { type: String },
+    eventDetails: { type: String },
     
 });
 ShiftSchema.plugin(uniqueValidator)
