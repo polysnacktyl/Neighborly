@@ -17,10 +17,9 @@ function Community() {
                     color: "#006600",
                     fontSize: "16px",
                     textShadow: "2px 2px #00ffcc"
-
                 }}>
                 <p>
-                    This is a placeholder until actual content arrives
+                    This is a placeholder until actual content arrives😊
                     </p>
             </div>
         </div>
