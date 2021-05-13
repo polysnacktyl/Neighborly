@@ -20,7 +20,22 @@ export default {
   },
   saveUser: function(userData) {
     return axios.post("/api/user", userData)
-  }
+  }, 
+  getShifts: function() {
+    return axios.get("/api/shifts");
+  },
+  // Gets the book with the given id
+  getShift: function(id) {
+    return axios.get("/api/shifts/" + id);
+  },
+  // Deletes the book with the given id
+  deleteShift: function(id) {
+    return axios.delete("/api/shifts/" + id);
+  },
+  // Saves a book to the database
+  saveShift: function(shiftData) {
+    return axios.post("/api/shifts", shiftData);
+  },
 };
 
 
