@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import DeleteBtn from "../components/DeleteBtn";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn, Radio } from "../components/Form";
+import UserContext from "../utils/userContext";
 
 function Resources() {
     // Setting our component's initial state
     const [resources, setResources] = useState([])
     const [formObject, setFormObject] = useState({})
+    const { user } = useContext(UserContext);
 
     // Load all books and store them with setBooks
     useEffect(() => {
@@ -43,10 +45,12 @@ function Resources() {
     function handleFormSubmit(event) {
         event.preventDefault();
         if (formObject.dateAvailable && formObject.details && formObject.status) {
+            console.log(formObject)
             API.saveResource({
                 dateAvailable: formObject.dateAvailable,
                 details: formObject.details,
-                status: formObject.status
+                status: formObject.status,
+                user: user.email
 
             })
                 .then(res => loadResources())
@@ -72,11 +76,12 @@ function Resources() {
                             name="details"
                             placeholder="details (required)"
                         />
-                        {/* <TextArea
-              onChange={handleInputChange}
-              name="status"
-              placeholder="status (required)"
-            /> */}
+                        <TextArea
+                            onChange={handleInputChange}
+                            name="user"
+                            value={user.email}
+
+                        />
                         <Radio
                             onChange={handleInputChange}
                             name="status"
