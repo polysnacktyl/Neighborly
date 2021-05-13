@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
+import requests from "../../../models/requests";
 
 function Requests() {
   // Setting our component's initial state
@@ -26,9 +27,9 @@ function Requests() {
       .catch(err => console.log(err));
   };
 
-  // Deletes a book from the database with a given id, then reloads Requests from the db
-  function deleteBook(id) {
-    API.deleteBook(id)
+  // Deletes a request from the database with a given id, then reloads Requests from the db
+  function deleteRequests(id) {
+    API.deleteRequests(id)
       .then(res => loadRequests())
       .catch(err => console.log(err));
   }
@@ -39,12 +40,12 @@ function Requests() {
     setFormObject({...formObject, [name]: value})
   };
 
-  // When the form is submitted, use the API.saveBook method to save the book data
+  // When the form is submitted, use the API.saveRequest method to save the request data
   // Then reload Requests from the database
   function handleFormSubmit(event) {
     event.preventDefault();
     if (formObject.title && formObject.author) {
-      API.saveBook({
+      API.saveRequests({
         title: formObject.title,
         author: formObject.author,
         synopsis: formObject.synopsis
@@ -86,14 +87,14 @@ function Requests() {
             </Jumbotron>
             {Requests.length ? (
               <List>
-                {Requests.map(request => (
-                  <ListItem key={request._id}>
-                    <Link to={"/requests/" + request._id}>
+                {Requests.map(requests => (
+                  <ListItem key={requests._id}>
+                    <Link to={"/requests/" + requests._id}>
                       <strong>
-                        {request.title}, {request.request}
+                        {requests.title}, {requests.requests}
                       </strong>
                     </Link>
-                    <DeleteBtn onClick={() => deleteBook(request._id)} />
+                    <DeleteBtn onClick={() => deleteRequests(requests._id)} />
                   </ListItem>
                 ))}
               </List>
@@ -107,4 +108,4 @@ function Requests() {
   }
 
 
-export default Requests;
+export default requests;

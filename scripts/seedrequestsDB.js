@@ -6,24 +6,23 @@ const db = require("../models/");
 mongoose.connect(
     process.env.MONGODB_URI ||
     "mongodb://localhost/project3",
-    { useNewUrlParser: true }
 );
 
 const requestsSeed = [
     {
       title: "humor me",
-      date,
+      date: { type: Date, default: Date.now },
       request: "i am tired", 
     },
     {
         title: "dance",
-        date,
+        date: { type: Date, default: Date.now },
         request: "wake up"
     }
 ];
 
 db.requests
-    .deleteOne({})
+    .remove({})
     .then(() => db.requests.collection.insertMany(requestsSeed))
     .then(data => {
         console.log(data.result.n + " records inserted!");
@@ -32,4 +31,4 @@ db.requests
     .catch(err => {
         console.error(err);
         process.exit(1);
-    });
+    })
