@@ -35,4 +35,8 @@ color: var(--pale);
 .profile {
     background-color: var(--sea);
   }
+
+.calendar {
+  background-color: var(--sea);
+}
     
