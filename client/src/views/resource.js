@@ -4,7 +4,7 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn, Radio, Date } from "../components/Form";
+import { TextArea, FormBtn, Radio, Date } from "../components/Form";
 import UserContext from "../utils/userContext";
 
 function Resources() {
@@ -46,6 +46,8 @@ function Resources() {
         event.preventDefault();
         if (formObject.dateAvailable && formObject.details && formObject.status) {
             console.log(formObject)
+            console.log(user)
+            console.log(user.email)
             API.saveResource({
                 dateAvailable: formObject.dateAvailable,
                 details: formObject.details,
@@ -53,13 +55,15 @@ function Resources() {
                 user: user.email
 
             })
+
                 .then(res => loadResources())
                 .catch(err => console.log(err));
+
         }
     };
 
     return (
-        <Container fluid>
+        < Container fluid >
             <Row>
                 <Col size="md-6">
                     {/* <Jumbotron>
@@ -119,7 +123,7 @@ function Resources() {
                         )}
                 </Col>
             </Row>
-        </Container>
+        </Container >
     );
 }
 

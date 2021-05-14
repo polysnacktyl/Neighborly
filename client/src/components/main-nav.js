@@ -1,4 +1,4 @@
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import React from "react";
 
 const MainNav = () => (
@@ -11,7 +11,7 @@ const MainNav = () => (
     >
       Home
     </NavLink>
-    
+
     <NavLink
       to="/profile"
       exact
@@ -30,14 +30,6 @@ const MainNav = () => (
       Community Dashboard
     </NavLink>
 
-    <NavLink
-      to="/books"
-      exact
-      className="nav-link"
-      activeClassName="router-link-exact-active"
-    >
-      Books
-    </NavLink>
   </div>
 );
 
