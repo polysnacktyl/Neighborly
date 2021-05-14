@@ -38,7 +38,7 @@ function Community() {
                 <Col size="md-4">
                     <div className="card text-center" style={{ width: "18rem" }}>
                         <div className="card-body">
-                            <h5 className="card-title">Calendar</h5>
+                            <h5 className="card-title">Volunteer Shift Calendar</h5>
                             <p className="card-text">Calendar of upcoming volunteer events happening in the community</p>
                             <Link to="/community_calendar">
                                 <button className="btn btn-primary">View Calendar</button>

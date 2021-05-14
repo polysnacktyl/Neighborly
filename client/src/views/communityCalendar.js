@@ -9,16 +9,16 @@ import "../components/style.css";
 function CommunityCalendar() {
 
 
-    const [Requests, setResources] = useState([])
+    const [shifts, setShifts] = useState([])
 
     useEffect(() => {
-        loadRequests()
+        loadShifts()
     }, [])
 
-    function loadRequests() {
-        API.getRequests()
+    function loadShifts() {
+        API.getShifts()
             .then(res =>
-                setResources(res.data)
+                setShifts(res.data)
             )
             .catch(err => console.log(err));
     };
@@ -35,14 +35,13 @@ function CommunityCalendar() {
                 Calendar Here!
             </p>
             <Col size="md-6 sm-12">
-
-                {Requests.length ? (
+                {shifts.length ? (
                     <List>
-                        {Requests.map(requests => (
-                            <ListItem key={requests._id}>
-                                <Link to={"/requests/" + requests._id}>
+                        {shifts.map(shifts => (
+                            <ListItem key={shifts._id}>
+                                <Link to={"/shifts/" + shifts._id}>
                                     <strong>
-                                        {requests.title}, {requests.request}
+                                        {shifts.eventTitle} at {shifts.eventLocation}
                                     </strong>
                                 </Link>
 
