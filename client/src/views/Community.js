@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
+import "../components/style.css";
 
 function Community() {
     return (
 
+        <div className="community">
         <Container fluid>
             <Row>
                 <Col size="md-12">
@@ -27,7 +29,6 @@ function Community() {
                 </Col>
                 <Col size="md-4">
                     <div className="card text-center" style={{ width: "18rem" }}>
-
                         <h5 className="card-title">Resource Offers</h5>
                         <p className="card-text">Submit a new offer or fulfil an existing offer</p>
                         <Link to="/community_resources">
@@ -48,6 +49,8 @@ function Community() {
                 </Col>
             </Row>
         </Container >
+        
+        </div>
     );
 }
 
