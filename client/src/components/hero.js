@@ -1,7 +1,7 @@
 import React from "react";
 
 const Hero = () => (
-  <div className="text-center hero-home">
+  <div className="text-center">
     <h1 className="mb-4"
     style={{
       color: "var(--pale)",
