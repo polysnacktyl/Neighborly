@@ -8,7 +8,7 @@
 footer {
       background-color: var(--mint);
       position: fixed;
-      height: 150px;
+      height: 50px;
       bottom: 0;
       width: 100%;
       color: var(--pale);
@@ -39,4 +39,3 @@ color: var(--pale);
 .calendar {
   background-color: var(--sea);
 }
-    
