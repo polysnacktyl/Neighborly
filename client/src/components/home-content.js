@@ -10,9 +10,17 @@ const HomeContent = () => (
       fontWeight: "bolder",
       fontSize: "24px",
       textShadow: "2px 2px var(--forest)"
-
     }}>
-    ...neighbors helping neighbors get through hard times &#128151;</h2>
+    ...neighbors helping neighbors get through hard times &#128151;
+    </h2>
+    
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
 <br></br>
 <br></br>
 <br></br>

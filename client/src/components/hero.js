@@ -2,7 +2,14 @@ import React from "react";
 
 const Hero = () => (
   <div className="text-center hero-home">
-    <h1 className="mb-4">Neighborly</h1>
+    <h1 className="mb-4"
+    style={{
+      color: "var(--pale)",
+      fontWeight: "bolder",
+      fontSize: "75px",
+      textShadow: "3px 3px var(--forest)"
+    }}>
+    Neighborly</h1>
     <br></br>
     <br></br>
     <br></br>
