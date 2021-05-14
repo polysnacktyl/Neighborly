@@ -9,6 +9,13 @@ export function Input(props) {
     </div>
   );
 }
+export function Date(props) {
+  return (
+    <div className="form-group">
+      <input type="date" dateFormat="DD/MM/YYYY" className="form-control" {...props} />
+    </div>
+  );
+}
 
 export function TextArea(props) {
   return (
