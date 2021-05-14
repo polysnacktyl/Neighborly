@@ -4,7 +4,7 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn, Radio } from "../components/Form";
+import { Input, TextArea, FormBtn, Radio, Date } from "../components/Form";
 import UserContext from "../utils/userContext";
 
 function Resources() {
@@ -66,7 +66,9 @@ function Resources() {
               <h1>What Books Should I Read?</h1>
             </Jumbotron> */}
                     <form>
-                        <Input
+                        <h7>Enter date available:</h7>
+                        <Date
+
                             onChange={handleInputChange}
                             name="dateAvailable"
                             placeholder="Date available (required)"
@@ -76,7 +78,7 @@ function Resources() {
                             name="details"
                             placeholder="details (required)"
                         />
-                        <TextArea
+                        <div
                             onChange={handleInputChange}
                             name="user"
                             value={user.email}
