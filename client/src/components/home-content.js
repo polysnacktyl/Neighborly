@@ -14,24 +14,6 @@ const HomeContent = () => (
     ...neighbors helping neighbors get through hard times &#128151;
     </h2>
     
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-
       </div>
 );
 

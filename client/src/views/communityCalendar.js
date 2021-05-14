@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { Col } from "../components/Grid";
 // import Resources from "./resource";
 import API from "../utils/API";
-import "../components/style.css";
 
 function CommunityCalendar() {
 

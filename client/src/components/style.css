@@ -5,6 +5,10 @@
     --pale:#ffffff;
   }
 
+  body {
+    background-color: var(--sea);
+  }
+
 footer {
       background-color: var(--mint);
       position: fixed;
@@ -36,6 +40,10 @@ color: var(--pale);
     background-color: var(--sea);
   }
 
-.calendar {
+.community {
   background-color: var(--sea);
+}
+
+.home-image {
+  background-image: url("../images/background.jpg");
 }

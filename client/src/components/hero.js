@@ -1,8 +1,10 @@
 import React from "react";
+import "../components/style.css";
+
 
 const Hero = () => (
-  <div className="text-center">
-    <h1 className="mb-4"
+  <div className="text-center hero-image">
+    <h1 className="mb-4 hero-image"
     style={{
       color: "var(--pale)",
       fontWeight: "bolder",
@@ -11,12 +13,8 @@ const Hero = () => (
     }}>
     Neighborly
     </h1>
-
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    
+  
+  
   </div>
 );
 
