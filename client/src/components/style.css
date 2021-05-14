@@ -3,10 +3,11 @@
     --mint:#99ffcc;
     --forest:#004d26;
     --pale:#ffffff;
+    --blue:#b3ccff;
   }
 
   body {
-    background-color: var(--sea);
+    background: linear-gradient(to top, #64bd8f, #e6ffe6);
   }
 
 footer {
@@ -21,7 +22,7 @@ footer {
   }
 
 .navbar {
-background-color: var(--mint);
+background-color: var(--blue);
 color: var(--pale);
       text-shadow: 2px 2px var(--forest);
   }
@@ -36,14 +37,3 @@ color: var(--pale);
         text-shadow: 2px 2px var(--pale);
   }
 
-.profile {
-    background-color: var(--sea);
-  }
-
-.community {
-  background-color: var(--sea);
-}
-
-.home-image {
-  background-image: url("../images/background.jpg");
-}
