@@ -9,11 +9,14 @@ const Hero = () => (
       fontSize: "75px",
       textShadow: "3px 3px var(--forest)"
     }}>
-    Neighborly</h1>
+    Neighborly
+    </h1>
+
     <br></br>
     <br></br>
     <br></br>
     <br></br>
+    
   </div>
 );
 
