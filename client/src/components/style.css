@@ -2,15 +2,18 @@
     --sea:#e6ffe6;
     --mint:#99ffcc;
     --forest:#004d26;
+    --green: #009933;
     --pale:#ffffff;
+    --blue:#b3ccff;
+    --aqua:#4eb883;
   }
 
   body {
-    background-color: var(--sea);
+    background: linear-gradient(to bottom, #99ffcc, #ffffff);
   }
 
 footer {
-      background-color: var(--mint);
+  /* background: linear-gradient(to bottom, #99ffcc, #ffffff); */
       position: fixed;
       height: 50px;
       bottom: 0;
@@ -21,9 +24,10 @@ footer {
   }
 
 .navbar {
-background-color: var(--mint);
-color: var(--pale);
-      text-shadow: 2px 2px var(--forest);
+background-color: var(--aqua);
+/* background: linear-gradient(to top, #b3ccff, #004d26); */
+color: var(--mint);
+text-shadow: 2px 2px var(--forest);
   }
 
 .navbar a {
@@ -36,14 +40,3 @@ color: var(--pale);
         text-shadow: 2px 2px var(--pale);
   }
 
-.profile {
-    background-color: var(--sea);
-  }
-
-.community {
-  background-color: var(--sea);
-}
-
-.home-image {
-  background-image: url("../images/background.jpg");
-}
