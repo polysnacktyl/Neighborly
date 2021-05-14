@@ -32,6 +32,7 @@ const Profile = () => {
   })
   return (
     <Container fluid>
+
       <Row>
         <Col size="md-4">
           <div className="card text-center" style={{ width: "18rem" }}>
