@@ -27,13 +27,12 @@ function Community() {
                 </Col>
                 <Col size="md-4">
                     <div className="card text-center" style={{ width: "18rem" }}>
-                        <div className="card-body">
-                            <h5 className="card-title">Offers</h5>
-                            <p className="card-text">Submit a new offer or fulfil an existing offer</p>
-                            <Link to="/community_offers">
-                                <button className="btn btn-primary">View Offers</button>
-                            </Link>
-                        </div>
+
+                        <h5 className="card-title">Resource Offers</h5>
+                        <p className="card-text">Submit a new offer or fulfil an existing offer</p>
+                        <Link to="/community_resources">
+                            <button className="btn btn-primary">View Offers</button>
+                        </Link>
                     </div>
                 </Col>
                 <Col size="md-4">
@@ -48,7 +47,7 @@ function Community() {
                     </div>
                 </Col>
             </Row>
-        </Container>
+        </Container >
     );
 }
 
