@@ -7,15 +7,18 @@
   footer {
       background-color: var(--mint);
       position: fixed;
-      height: 200px;
+      height: 150px;
       bottom: 0;
       width: 100%;
       color: var(--pale);
       text-shadow: 2px 2px var(--forest);
       font-size: 30px;
-
   }
-  
-  
 
+  .next-steps {
+      background-image: url("../images/background.jpg");
+  }
 
+  .hero-home {
+      background-image: url("../images/background.jpg");
+  }
