@@ -1,12 +1,22 @@
 import React from "react";
 
 const Hero = () => (
-  <div className="text-center hero">
+  <div className="text-center">
+    <h1 className="mb-4"
+    style={{
+      color: "var(--pale)",
+      fontWeight: "bolder",
+      fontSize: "75px",
+      textShadow: "3px 3px var(--forest)"
+    }}>
+    Neighborly
+    </h1>
 
-    <h1 className="mb-4">project 3!</h1>
-    <p className="lead">
-     welcome to our...content...probably. 
-    </p>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    
   </div>
 );
 

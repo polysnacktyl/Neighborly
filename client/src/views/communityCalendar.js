@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 import { Col } from "../components/Grid";
 // import Resources from "./resource";
 import API from "../utils/API";
-
-
+import "../components/style.css";
 
 function CommunityCalendar() {
 
@@ -26,7 +25,7 @@ function CommunityCalendar() {
 
     return (
         <div>
-            <p className="text-center"
+            <p className="text-center calendar"
                 style={{
                     color: "#99ffcc",
                     fontWeight: "bolder",
