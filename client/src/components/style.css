@@ -22,3 +22,20 @@
   .hero-home {
       background-image: url("../images/background.jpg");
   }
+
+  .navbar {
+background-color: var(--mint);
+color: var(--pale);
+      text-shadow: 2px 2px var(--forest);
+  }
+
+  .navbar a {
+    color: var(--pale);
+    text-shadow: 2px 2px var(--forest);
+      }
+
+      .navbar a:hover {
+        color: var(--forest);
+        text-shadow: 2px 2px var(--pale);
+          }
+    
