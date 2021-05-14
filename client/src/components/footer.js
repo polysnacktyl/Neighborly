@@ -1,9 +1,10 @@
 import React from "react";
+import "./style.css";
 
 const Footer = () => (
-  <footer className="bg-light p-3 text-center">
+  <footer className="text-center">
     <p>
-      footer footer footie foot
+      Welcome to Neighborly
     </p>
   </footer>
 );
