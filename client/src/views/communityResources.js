@@ -7,17 +7,17 @@ import API from "../utils/API";
 
 
 
-function CommunityRequests() {
+function CommunityResources() {
 
 
-    const [Requests, setResources] = useState([])
+    const [resources, setResources] = useState([])
 
     useEffect(() => {
-        loadRequests()
+        loadResources()
     }, [])
 
-    function loadRequests() {
-        API.getRequests()
+    function loadResources() {
+        API.getResources()
             .then(res =>
                 setResources(res.data)
             )
@@ -33,20 +33,19 @@ function CommunityRequests() {
                     fontSize: "24px",
                     textShadow: "2px 2px #004d26"
                 }}>
-                Requests Here!
+                Resource Offers Here!
             </p>
             <Col size="md-6 sm-12">
 
-                {Requests.length ? (
+                {resources.length ? (
                     <List>
-                        {Requests.map(requests => (
-                            <ListItem key={requests._id}>
-                                <Link to={"/requests/" + requests._id}>
+                        {resources.map(resources => (
+                            <ListItem key={resources._id}>
+                                <Link to={"/resources/" + resources._id}>
                                     <strong>
-                                        {requests.title}, {requests.request}
+                                        available on {resources.dateAvailable}, and {resources.details}
                                     </strong>
                                 </Link>
-
                             </ListItem>
                         ))}
                     </List>
@@ -59,4 +58,4 @@ function CommunityRequests() {
     )
 }
 
-export default CommunityRequests;
+export default CommunityResources;

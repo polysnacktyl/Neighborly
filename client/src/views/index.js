@@ -9,10 +9,11 @@ import Resources from "./resource";
 import ResourceDetails from "./resourceDetails";
 import Requests from "./requests"
 import RequestsDetail from "./requestsDetail"
-import communityRequests from "./communityRequests";
+import CommunityRequests from "./communityRequests";
+import CommunityResources from "./communityResources";
 import Offers from "./Offers";
-import Calendar from "./Calendar";
+import CommunityCalendar from "./communityCalendar";
 
 
 
-export { Home, Profile, Books, Detail, Shifts, ShiftDetails, Resources, ResourceDetails, Community, Offers, communityRequests, Calendar, Requests, RequestsDetail };
+export { Home, Profile, Books, Detail, Shifts, ShiftDetails, Resources, ResourceDetails, Community, Offers, CommunityRequests, CommunityResources, CommunityCalendar, Requests, RequestsDetail };

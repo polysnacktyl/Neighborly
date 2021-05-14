@@ -7,7 +7,7 @@ import API from "../utils/API";
 
 
 
-function CommunityRequests() {
+function CommunityCalendar() {
 
 
     const [Requests, setResources] = useState([])
@@ -33,7 +33,7 @@ function CommunityRequests() {
                     fontSize: "24px",
                     textShadow: "2px 2px #004d26"
                 }}>
-                Requests Here!
+                Calendar Here!
             </p>
             <Col size="md-6 sm-12">
 
@@ -59,4 +59,4 @@ function CommunityRequests() {
     )
 }
 
-export default CommunityRequests;
+export default CommunityCalendar;
