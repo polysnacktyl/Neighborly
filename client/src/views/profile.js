@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { Col, Row, Container } from "../components/Grid";
 import API from "../utils/API";
 import UserContext from "../utils/userContext"
 
@@ -30,35 +31,43 @@ const Profile = () => {
       .catch(err => console.log(err));
   })
   return (
-    <div>
-      <div className="card text-center" style={{ width: "18rem" }}>
-        <div className="card-body">
-          <h5 className="card-title">Requests</h5>
-          <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <Link to="/requests">
-            <button className="btn btn-primary">Go somewhere</button>
-          </Link>
-        </div>
-      </div>
-      <div className="card text-center" style={{ width: "18rem" }}>
-        <div className="card-body">
-          <h5 className="card-title">Volunteer Calendar</h5>
-          <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <Link to="/shifts">
-            <button className="btn btn-primary">Go somewhere</button>
-          </Link>
-        </div>
-      </div>
-      <div className="card text-center" style={{ width: "18rem" }}>
-        <div className="card-body">
-          <h5 className="card-title">Resources</h5>
-          <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <Link to="/resources">
-            <button className="btn btn-primary">Go somewhere</button>
-          </Link>
-        </div>
-      </div>
-    </div>
+    <Container fluid>
+      <Row>
+        <Col size="md-4">
+          <div className="card text-center" style={{ width: "18rem" }}>
+            <div className="card-body">
+              <h5 className="card-title">Requests</h5>
+              <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <Link to="/requests">
+                <button className="btn btn-primary">Go somewhere</button>
+              </Link>
+            </div>
+          </div>
+        </Col>
+        <Col size="md-4">
+          <div className="card text-center" style={{ width: "18rem" }}>
+            <div className="card-body">
+              <h5 className="card-title">Volunteer Calendar</h5>
+              <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <Link to="/shifts">
+                <button className="btn btn-primary">Go somewhere</button>
+              </Link>
+            </div>
+          </div>
+        </Col>
+        <Col size="md-4">
+          <div className="card text-center" style={{ width: "18rem" }}>
+            <div className="card-body">
+              <h5 className="card-title">Resources</h5>
+              <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <Link to="/resources">
+                <button className="btn btn-primary">Go somewhere</button>
+              </Link>
+            </div>
+          </div>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 export default Profile;
