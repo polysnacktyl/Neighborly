@@ -6,6 +6,10 @@
     --pale:#ffffff;
     --blue:#b3ccff;
     --aqua:#4eb883;
+    --lilac:#e6e6ff;
+    --beige:#ffe6cc;
+    --smoke:#404040;
+    --orchid:#ccccff;
   }
 
   body {
@@ -13,7 +17,6 @@
   }
 
 footer {
-  /* background: linear-gradient(to bottom, #99ffcc, #ffffff); */
       position: fixed;
       height: 50px;
       bottom: 0;
@@ -25,7 +28,6 @@ footer {
 
 .navbar {
 background-color: var(--aqua);
-/* background: linear-gradient(to top, #b3ccff, #004d26); */
 color: var(--mint);
 text-shadow: 2px 2px var(--forest);
   }
@@ -36,7 +38,87 @@ text-shadow: 2px 2px var(--forest);
   }
 
 .navbar a:hover {
-        color: var(--forest);
-        text-shadow: 2px 2px var(--pale);
+        color: var(--mint);
+        text-shadow: 1px 1px var(--pale);
   }
 
+.card {
+  border-radius: 10px;
+  border-color: var(--forest);
+  background-color: var(--lilac);
+  background: linear-gradient(to bottom, var(--lilac), var(--beige));
+  box-shadow: 6px 6px 6px 6px rgb(65, 63, 63), 0 6px 6px #999;
+  height: 400px;
+  text-align:center;
+}
+
+.card-body {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 2.25rem;
+  padding-top: 4.25rem;
+  padding-right: 2.25rem;
+  padding-bottom: 1.25rem;
+  padding-left: 2.25rem;
+}
+
+.card-footer {
+  padding: .75rem 1.25rem;
+  padding-top: 3.75rem;
+  padding-right: 1.25rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.25rem;
+  background-color: rgba(0,0,0,.03);
+  border-top: 1px solid rgba(0,0,0,.125);
+}
+
+.card-title {
+  color: var(--aqua);
+  font-weight: bolder;
+  font-size: 24px;
+  text-shadow: 2px 2px var(--forest);
+}
+
+.card-title:hover {
+  color: var(--mint);
+  font-weight: bolder;
+  font-size: 24px;
+  text-shadow: 2px 2px var(--forest);
+}
+
+.card-text {
+  color: var(--forest);
+  text-shadow: 1px 1px var(--forest);
+  
+}
+
+.card-text:hover {
+  color: var(--forest);
+  text-shadow: 2px 2px var(--mint);
+}
+
+.btn-view {
+  background-image: url("../images/background4.png");
+  box-shadow: inset 0px 0px 8px var(--smoke), 0 0 15px var(--orchid);
+  color: var(--pale);
+    text-shadow: 2px 2px var(--forest);
+  
+  bottom:0;
+}
+
+.btn-view:hover {
+  background-image: url("../images/background3.png");
+  box-shadow: inset 0px 0px 8px var(--smoke), 0 0 15px var(--orchid);
+  color: var(--mint);
+    text-shadow: 1px 1px var(--pale);
+}
+
+.community {
+  color: var(--aqua);
+  text-shadow: 2px 2px var(--forest);
+  
+}
+.row {
+  justify-content: space-around;
+}
