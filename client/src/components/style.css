@@ -45,7 +45,7 @@ text-shadow: 2px 2px var(--forest);
 .card {
   border-radius: 10px;
   border-color: var(--forest);
-  background-color: var(--lilac);
+  /* background-image: url("../images/background.jpg"); */
   background: linear-gradient(to bottom, var(--lilac), var(--beige));
   box-shadow: 6px 6px 6px 6px rgb(65, 63, 63), 0 6px 6px #999;
   height: 400px;
@@ -88,7 +88,7 @@ text-shadow: 2px 2px var(--forest);
 }
 
 .card-text {
-  color: var(--forest);
+  color: var(--mint);
   text-shadow: 1px 1px var(--forest);
   
 }
@@ -103,8 +103,6 @@ text-shadow: 2px 2px var(--forest);
   box-shadow: inset 0px 0px 8px var(--smoke), 0 0 15px var(--orchid);
   color: var(--pale);
     text-shadow: 2px 2px var(--forest);
-  
-  bottom:0;
 }
 
 .btn-view:hover {
