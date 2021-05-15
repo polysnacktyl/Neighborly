@@ -99,7 +99,7 @@ text-shadow: 2px 2px var(--forest);
 }
 
 .btn-view {
-  background-image: url("../images/background4.png");
+  background-image: url("../images/background.png");
   box-shadow: inset 0px 0px 8px var(--smoke), 0 0 15px var(--orchid);
   color: var(--pale);
     text-shadow: 2px 2px var(--forest);
