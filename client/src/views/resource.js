@@ -13,9 +13,17 @@ function Resources() {
     const [formObject, setFormObject] = useState({})
     const { user } = useContext(UserContext);
 
-    // Load all books and store them with setBooks
+    // trying to run conditional that wil only run useEffect if correct user is logged in
+    // useEffect(() => {
+    //     if (user.email === resources[0].user) {
+    //         loadResources()
+    //     }
+    // }, [])
+
     useEffect(() => {
+
         loadResources()
+
     }, [])
 
     // Loads all books and sets them to books
@@ -44,10 +52,12 @@ function Resources() {
     // Then reload books from the database
     function handleFormSubmit(event) {
         event.preventDefault();
+
         if (formObject.dateAvailable && formObject.details && formObject.status) {
             console.log(formObject)
             console.log(user)
             console.log(user.email)
+
             API.saveResource({
                 dateAvailable: formObject.dateAvailable,
                 details: formObject.details,
@@ -58,6 +68,7 @@ function Resources() {
 
                 .then(res => loadResources())
                 .catch(err => console.log(err));
+
 
         }
     };

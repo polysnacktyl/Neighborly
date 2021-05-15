@@ -36,6 +36,10 @@ export default {
   saveShift: function (shiftData) {
     return axios.post("/api/shifts", shiftData);
   },
+  // get single community shift detail by id
+  getCommunityShift: function (id) {
+    return axios.get("/api/community_calendar/" + id);
+  },
   // Gets all resources
   getResources: function () {
     return axios.get("/api/resources");
@@ -52,6 +56,10 @@ export default {
   saveResource: function (resourceData) {
     return axios.post("/api/resources/", resourceData);
   },
+  // get single community resource detail by id
+  getCommunityResource: function (id) {
+    return axios.get("/api/community_resources/" + id);
+  },
   getRequests: function () {
     return axios.get("/api/requests");
   },
@@ -66,8 +74,12 @@ export default {
   // Saves a book to the database
   saveRequests: function (requestsData) {
     return axios.post("/api/requests/", requestsData);
-  }
-  };
+  },
+  // get single community request detail by id
+  getCommunityRequest: function (id) {
+    return axios.get("/api/community_requests/" + id);
+  },
+};
 
 
 

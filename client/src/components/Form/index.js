@@ -12,7 +12,7 @@ export function Input(props) {
 export function Date(props) {
   return (
     <div className="form-group">
-      <input type="date" dateFormat="DD/MM/YYYY" className="form-control" {...props} />
+      <input type="date" className="form-control" {...props} />
     </div>
   );
 }
