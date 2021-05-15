@@ -10,7 +10,7 @@ function Community() {
             <Container fluid>
                 <Row>
                     <Col size="md-12">
-                        <h1 className="text-center">
+                        <h1 className="community text-center">
                             Our Community
               </h1>
                     </Col>
@@ -21,9 +21,11 @@ function Community() {
                             <div className="card-body">
                                 <h5 className="card-title">Request</h5>
                                 <p className="card-text">Submit a new request or fulfil a neighbor's request</p>
-                                <Link to="/community_requests">
-                                    <button className="btn btn-primary">View Requests</button>
-                                </Link>
+                                <div className="card-footer text-center">
+                                    <Link to="/community_requests">
+                                        <button className="btn-view">View Requests</button>
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                     </Col>
@@ -32,9 +34,11 @@ function Community() {
                             <div className="card-body">
                                 <h5 className="card-title">Resource Offers</h5>
                                 <p className="card-text">Submit a new offer or fulfill an existing offer</p>
-                                <Link to="/community_resources">
-                                    <button className="btn btn-primary">View Resource Offers</button>
-                                </Link>
+                                <div className="card-footer text-center">
+                                    <Link to="/community_resources">
+                                        <button className="btn-view">View Resource Offers</button>
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                     </Col>
@@ -43,9 +47,11 @@ function Community() {
                             <div className="card-body">
                                 <h5 className="card-title">Volunteer Shift Calendar</h5>
                                 <p className="card-text">Calendar of upcoming volunteer events in the community</p>
-                                <Link to="/community_calendar">
-                                    <button className="btn btn-primary">View Calendar</button>
-                                </Link>
+                                <div className="card-footer text-center">
+                                    <Link to="/community_calendar">
+                                        <button className="btn-view">View Calendar</button>
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                     </Col>
