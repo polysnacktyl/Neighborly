@@ -7,16 +7,9 @@ var uniqueValidator = require('mongoose-unique-validator')
 const userSchema = new mongoose.Schema({
   userID: { type: String, required: true, unique: true },
   userEmail: { type: String, required: true, unique: true },
-  // user: [{
-  //   _type: Schema.Types.ObjecId, get type() {
-  //     return this._type;
-  //   },
-  //   set type(value) {
-  //     this._type = value;
-  //   },
-  //   ref: 'user.email'
-  // }],
-  user: [{ type: String, ref: 'user.email' }],
+  resources: { type: String, required: true, unique: true },
+  requests: { type: String, required: true, unique: true },
+  shifts: { type: String, required: true, unique: true },
 
 });
 

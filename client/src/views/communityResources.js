@@ -41,7 +41,7 @@ function CommunityResources() {
                     <List>
                         {resources.map(resources => (
                             <ListItem key={resources._id}>
-                                <Link to={"/resources/" + resources._id}>
+                                <Link to={"/community_resources/" + resources._id}>
                                     <strong>
                                         available on {resources.dateAvailable}, and {resources.details}
                                     </strong>
