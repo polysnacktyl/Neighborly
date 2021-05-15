@@ -38,7 +38,7 @@ function CommunityCalendar() {
                     <List>
                         {shifts.map(shifts => (
                             <ListItem key={shifts._id}>
-                                <Link to={"/shifts/" + shifts._id}>
+                                <Link to={"/community_calendar/" + shifts._id}>
                                     <strong>
                                         {shifts.eventTitle} at {shifts.eventLocation}
                                     </strong>

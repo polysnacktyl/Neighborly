@@ -41,7 +41,7 @@ function CommunityRequests() {
                     <List>
                         {Requests.map(requests => (
                             <ListItem key={requests._id}>
-                                <Link to={"/requests/" + requests._id}>
+                                <Link to={"/community_requests/" + requests._id}>
                                     <strong>
                                         {requests.title}, {requests.request}
                                     </strong>
