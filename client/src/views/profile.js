@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import API from "../utils/API";
 import UserContext from "../utils/userContext"
-
+import "../components/style.css";
+import userImage1 from "../images/userImage1.jpg";
+import userImage from "../images/userImage.jpg";
+import userImage2 from "../images/userImage2.jpg";
 
 const Profile = () => {
   const { user } = useContext(UserContext)
@@ -40,39 +43,44 @@ const Profile = () => {
         </Col>
       </Row>
       <Row>
-          <div className="card text-center" style={{ width: "18rem" }}>
-            <div className="card-body">
-              <h5 className="card-title">Requests</h5>
-              <p className="card-text">View your active requests here.</p>
-              <div className="card-footer text-center">
-                <Link to="/requests">
-                  <button className="btn-view">View Requests</button>
-                </Link>
-              </div>
+        <div className="card text-center" style={{ width: "18rem" }}>
+          <div className="card-body">
+            <h5 className="card-title">Requests</h5>
+            <p className="card-text">View your active requests here.</p>
+            <div className="card-footer text-center">
+              <Link to="/requests">
+                <button className="btn-view">View Requests</button>
+              </Link>
             </div>
           </div>
-          <div className="card text-center" style={{ width: "18rem" }}>
-            <div className="card-body">
-              <h5 className="card-title">Volunteer Calendar</h5>
-              <p className="card-text">View your upcoming volunteer events here.</p>
-              <div className="card-footer text-center">
-                <Link to="/shifts">
-                  <button className="btn-view">View Calendar</button>
-                </Link>
-              </div>
+        </div>
+        <div className="card text-center" style={{ width: "18rem" }}>
+          <div className="card-body">
+            <h5 className="card-title">Volunteer Calendar</h5>
+            <p className="card-text">View your upcoming volunteer events here.</p>
+            <div className="card-footer text-center">
+              <Link to="/shifts">
+                <button className="btn-view">View Calendar</button>
+              </Link>
             </div>
           </div>
-          <div className="card text-center" style={{ width: "18rem" }}>
-            <div className="card-body">
-              <h5 className="card-title">Resources</h5>
-              <p className="card-text">View any resources you currently have listed as available here.</p>
-              <div className="card-footer text-center">
-                <Link to="/resources">
-                  <button className="btn-view">View Resources</button>
-                </Link>
-              </div>
+        </div>
+        <div className="card text-center" style={{ width: "18rem" }}>
+          <div className="card-body">
+            <h5 className="card-title">Resources</h5>
+            <p className="card-text">View any resources you currently have listed as available here.</p>
+            <div className="card-footer text-center">
+              <Link to="/resources">
+                <button className="btn-view">View Resources</button>
+              </Link>
             </div>
           </div>
+        </div>
+      </Row>
+      <Row>
+        <img src={userImage} alt="people holding hands" />
+        <img src={userImage2} alt="charity event race" />
+        <img src={userImage1} alt="man and boy" />
       </Row>
     </Container>
   );

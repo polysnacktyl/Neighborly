@@ -1,7 +1,6 @@
 import React from "react";
 import { Row, Container } from "../components/Grid";
-import background from "../images/background.jpg";
-// import home from "../images/home.jpg";
+import home from "../images/home.jpg";
 import home2 from "../images/home2.jpg";
 import home3 from "../images/home3.jpg";
 import home4 from "../images/home4.jpg";
@@ -21,11 +20,10 @@ const HomeContent = () => (
     </h2>
     <Container fluid>
       <Row>
-        <img src={background} alt="people helping" />
-        {/* <img src={home} alt="more people helping" /> */}
-        <img src={home2} alt="even more people helping" />
-        <img src={home3} alt="guy in hat" />
-        <img src={home4} alt="helping hands" />
+        <img src={home} alt="mad and woman gardening" />
+        <img src={home2} alt="group of women sitting on stairs" />
+        <img src={home3} alt="man in neighbor baseball cap" />
+        <img src={home4} alt="volunteers unloading truck" />
       </Row>
     </Container>
   </div>
