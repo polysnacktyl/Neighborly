@@ -109,7 +109,7 @@ text-shadow: 2px 2px var(--forest);
   background-image: url("../images/background3.png");
   box-shadow: inset 0px 0px 8px var(--smoke), 0 0 15px var(--orchid);
   color: var(--mint);
-    text-shadow: 1px 1px var(--pale);
+  text-shadow: 1px 1px var(--pale);
 }
 
 .community {
@@ -119,4 +119,12 @@ text-shadow: 2px 2px var(--forest);
 }
 .row {
   justify-content: space-around;
+}
+
+img {
+  border: 5px solid var(--mint);
+  border-radius: 5px;
+  /* outline: 10px solid var(--orchid);
+  outline-offset: 20px; */
+  
 }

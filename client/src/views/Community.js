@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import "../components/style.css";
+import home2 from "../images/home2.jpg";
+import home3 from "../images/home3.jpg";
+import background from "../images/background.jpg";
 
 function Community() {
     return (
@@ -16,7 +19,6 @@ function Community() {
                     </Col>
                 </Row>
                 <Row>
-                    <Col size="md-4">
                         <div className="card text-center" style={{ width: "18rem" }}>
                             <div className="card-body">
                                 <h5 className="card-title">Request</h5>
@@ -28,8 +30,6 @@ function Community() {
                                 </div>
                             </div>
                         </div>
-                    </Col>
-                    <Col size="md-4">
                         <div className="card text-center" style={{ width: "18rem" }}>
                             <div className="card-body">
                                 <h5 className="card-title">Resource Offers</h5>
@@ -41,8 +41,6 @@ function Community() {
                                 </div>
                             </div>
                         </div>
-                    </Col>
-                    <Col size="md-4">
                         <div className="card text-center" style={{ width: "18rem" }}>
                             <div className="card-body">
                                 <h5 className="card-title">Volunteer Shift Calendar</h5>
@@ -54,10 +52,15 @@ function Community() {
                                 </div>
                             </div>
                         </div>
-                    </Col>
                 </Row>
-            </Container >
 
+                <Row>
+                    <img src={home2} alt="even more people helping" />
+                    <img src={home3} alt="guy in hat" />
+                    <img src={background} alt="people helping" />
+                </Row>
+
+            </Container >
         </div>
     );
 }

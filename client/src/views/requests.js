@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
+import "../components/style.css";
 
 
 function Requests() {
@@ -57,10 +58,10 @@ function Requests() {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-6">
-            <Jumbotron>
-              <h1>Do You Need Help? Make A Request.</h1>
-            </Jumbotron>
+          <Col size="md-6 sm-12">
+            {/* <Jumbotron> */}
+              <h1 className="community">Do You Need Help? Make A Request.</h1>
+            {/* </Jumbotron> */}
             <form>
               <Input
                 onChange={handleInputChange}
@@ -81,9 +82,9 @@ function Requests() {
             </form>
           </Col>
           <Col size="md-6 sm-12">
-            <Jumbotron>
-              <h1>Come Help A Neighbor</h1>
-            </Jumbotron>
+            {/* <Jumbotron> */}
+              <h1 className="community">Come Help A Neighbor</h1>
+            {/* </Jumbotron> */}
             {Requests.length ? (
               <List>
                 {Requests.map(requests => (
