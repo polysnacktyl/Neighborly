@@ -45,7 +45,6 @@ text-shadow: 2px 2px var(--forest);
 .card {
   border-radius: 10px;
   border-color: var(--forest);
-  /* background-image: url("../images/background.jpg"); */
   background: linear-gradient(to bottom, var(--lilac), var(--beige));
   box-shadow: 6px 6px 6px 6px rgb(65, 63, 63), 0 6px 6px #999;
   height: 400px;
@@ -117,14 +116,14 @@ text-shadow: 2px 2px var(--forest);
   text-shadow: 2px 2px var(--forest);
   
 }
+
 .row {
   justify-content: space-around;
 }
 
 img {
-  border: 5px solid var(--mint);
+  border: none;
   border-radius: 5px;
-  /* outline: 10px solid var(--orchid);
-  outline-offset: 20px; */
-  
+  background: linear-gradient(to bottom, var(--lilac), var(--beige));
+  box-shadow: 6px 6px 6px 6px rgb(65, 63, 63), 0 6px 6px #999;
 }
