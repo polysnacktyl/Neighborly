@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { List, ListItem } from "../components/List";
 import { Link } from "react-router-dom";
 import { Col } from "../components/Grid";
 // import Resources from "./resource";
 import API from "../utils/API";
-
+import UserContext from "../utils/userContext";
 
 
 function CommunityResources() {
-
+    const { user } = useContext(UserContext);
 
     const [resources, setResources] = useState([])
 
@@ -17,7 +17,7 @@ function CommunityResources() {
     }, [])
 
     function loadResources() {
-        API.getResources()
+        API.getResources(user.email)
             .then(res =>
                 setResources(res.data)
             )
