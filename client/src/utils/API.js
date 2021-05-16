@@ -40,9 +40,9 @@ export default {
   getCommunityShift: function (id) {
     return axios.get("/api/community_calendar/" + id);
   },
-  // Gets all resources
-  getResources: function () {
-    return axios.get("/api/resources");
+  // Gets all resources by user
+  getResources: function (user) {
+    return axios.get("/api/resources/" + user);
   },
   // Gets the resource with the given id
   getResource: function (id) {

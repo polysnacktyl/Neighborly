@@ -21,14 +21,25 @@ function Resources() {
     // }, [])
 
     useEffect(() => {
+        console.log(resources)
+        console.log(user.email)
+        console.log(user)
+        console.log(formObject)
+
 
         loadResources()
+
 
     }, [])
 
     // Loads all books and sets them to books
     function loadResources() {
-        API.getResources()
+        console.log(resources)
+        console.log(user.email)
+        console.log(user)
+        console.log(formObject)
+        API.getResources(user.email)
+
             .then(res =>
                 setResources(res.data)
             )
@@ -52,11 +63,18 @@ function Resources() {
     // Then reload books from the database
     function handleFormSubmit(event) {
         event.preventDefault();
+        // console.log(formObject)
+        // console.log(user)
+        // console.log(user.email)
+        // console.log(resources)
 
         if (formObject.dateAvailable && formObject.details && formObject.status) {
             console.log(formObject)
             console.log(user)
             console.log(user.email)
+            console.log(resources)
+
+
 
             API.saveResource({
                 dateAvailable: formObject.dateAvailable,
@@ -81,7 +99,7 @@ function Resources() {
               <h1>What Books Should I Read?</h1>
             </Jumbotron> */}
                     <form>
-                        <h7>Enter date available:</h7>
+                        <h6>Enter date available:</h6>
                         <Date
 
                             onChange={handleInputChange}
@@ -113,9 +131,6 @@ function Resources() {
                     </form>
                 </Col>
                 <Col size="md-6 sm-12">
-                    {/* <Jumbotron>
-              <h1>Books On My List</h1>
-            </Jumbotron> */}
                     {resources.length ? (
                         <List>
                             {resources.map(resources => (

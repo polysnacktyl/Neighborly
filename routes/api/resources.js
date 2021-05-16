@@ -13,4 +13,9 @@ router
     .put(resourceController.update)
     .delete(resourceController.remove);
 
+router
+    .route("/:user")
+    .get(resourceController.findAllByUser)
+
+
 module.exports = router;
