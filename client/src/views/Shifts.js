@@ -45,8 +45,8 @@ function Shifts() {
       API.saveShift({
         eventTitle: formObject.eventTitle,
         eventLocation: formObject.eventLocation,
-        eventDetails: formObject.eventDetails, 
-        user: user.email, 
+        eventDetails: formObject.eventDetails,
+        user: user.email,
         authID: authID
       })
         .then(res => loadShifts())
@@ -74,11 +74,17 @@ function Shifts() {
               name="eventDetails"
               placeholder="Details"
             />
+            <div
+              onChange={handleInputChange}
+              name="user"
+              value={user.email}
+
+            />
             <FormBtn
-                disabled={!(formObject.eventTitle && formObject.eventDetails)}
-                onClick={handleFormSubmit}
-              >
-                post a volunteer opportunity
+              disabled={!(formObject.eventTitle && formObject.eventDetails)}
+              onClick={handleFormSubmit}
+            >
+              post a volunteer opportunity
               </FormBtn>
           </form>
         </Col>
@@ -97,8 +103,8 @@ function Shifts() {
               ))}
             </List>
           ) : (
-            <h3>No Results to Display</h3>
-          )}
+              <h3>No Results to Display</h3>
+            )}
         </Col>
       </Row>
     </Container>

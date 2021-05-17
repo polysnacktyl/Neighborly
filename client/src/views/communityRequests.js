@@ -1,57 +1,111 @@
-import React, { useState, useEffect } from "react";
-import { List, ListItem } from "../components/List";
-import { Link } from "react-router-dom";
-import { Col } from "../components/Grid";
+import React, { useState, useEffect, useContext } from "react";
+import DeleteBtn from "../components/DeleteBtn";
 import API from "../utils/API";
+import { Link } from "react-router-dom";
+import { Col, Row, Container } from "../components/Grid";
+import { List, ListItem } from "../components/List";
+import { Input, TextArea, FormBtn, Date } from "../components/Form";
+import UserContext from "../utils/userContext";
 
-function CommunityRequests() {
-    const [Requests, setResources] = useState([])
+function Requests() {
+    const [Requests, setRequests] = useState([])
+    const [formObject, setFormObject] = useState({})
+    const { user } = useContext(UserContext);
 
     useEffect(() => {
         loadRequests()
     }, [])
 
     function loadRequests() {
-        API.getAllRequests()
+        let userID = user.sub.split("|");
+        let authID = userID[1];
+        API.getAllRequests(authID)
             .then(res =>
-                setResources(res.data)
+                setRequests(res.data)
             )
             .catch(err => console.log(err));
     };
 
+
+    function handleInputChange(event) {
+        const { name, value } = event.target;
+        setFormObject({ ...formObject, [name]: value })
+    };
+
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        if (formObject.title && formObject.request && formObject.dateAvailable) {
+            let userID = user.sub.split("|");
+            let authID = userID[1];
+            API.saveRequests({
+                dateAvailable: formObject.dateAvailable,
+                title: formObject.title,
+                request: formObject.request,
+                user: user.email,
+                authID: authID
+            })
+                .then(res => loadRequests())
+                .catch(err => console.log(err));
+        }
+    };
+
     return (
-        <div>
-            <p className="text-center"
-                style={{
-                    color: "#99ffcc",
-                    fontWeight: "bolder",
-                    fontSize: "24px",
-                    textShadow: "2px 2px #004d26"
-                }}>
-                Requests Here!
-            </p>
-            <Col size="md-6 sm-12">
+        <Container fluid>
+            <Row>
+                <Col size="md-6 sm-12">
+                    <form>
+                        <h6>Enter date available:</h6>
+                        <Date
 
-                {Requests.length ? (
-                    <List>
-                        {Requests.map(requests => (
-                            <ListItem key={requests._id}>
-                                <Link to={"/community_requests/" + requests._id}>
-                                    <strong>
-                                        {requests.title}, {requests.request}
-                                    </strong>
-                                </Link>
+                            onChange={handleInputChange}
+                            name="dateAvailable"
+                            placeholder="Date available (required)"
+                        />
+                        <Input
+                            onChange={handleInputChange}
+                            name="title"
+                            placeholder="title (required)"
+                        />
+                        <TextArea
+                            onChange={handleInputChange}
+                            name="request"
+                            placeholder="request (required)"
+                        />
+                        <div
+                            onChange={handleInputChange}
+                            name="user"
+                            value={user.email}
 
-                            </ListItem>
-                        ))}
-                    </List>
-                ) : (
-                        <h3>No Results to Display</h3>
-                    )}
-            </Col>
-
-        </div>
-    )
+                        />
+                        <FormBtn
+                            disabled={!(formObject.title && formObject.request)}
+                            onClick={handleFormSubmit}
+                        >
+                            Submit Request
+              </FormBtn>
+                    </form>
+                </Col>
+                <Col size="md-6 sm-12">
+                    {Requests.length ? (
+                        <List>
+                            {Requests.map(requests => (
+                                <ListItem key={requests._id}>
+                                    <Link to={"/community_requests/" + requests._id}>
+                                        <strong>
+                                            {requests.title}, {requests.request}
+                                        </strong>
+                                    </Link>
+                                </ListItem>
+                            ))}
+                        </List>
+                    ) : (
+                            <h3>No Results to Display</h3>
+                        )}
+                </Col>
+            </Row>
+        </Container>
+    );
 }
 
-export default CommunityRequests;
+
+export default Requests;

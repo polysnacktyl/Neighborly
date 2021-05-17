@@ -12,40 +12,40 @@ function RequestsDetail(props) {
   // const {id} = useParams()
   const { id } = useParams()
   useEffect(() => {
-    API.getRequests(id)
+    API.getRequest(id)
       .then(res => setRequests(res.data))
       .catch(err => console.log(err));
-  }, )
+  })
 
   return (
-      <Container fluid>
-        <Row>
-          <Col size="md-12">
-            <Jumbotron>
-              <h1>
-                {requests.title} 
-              </h1>
-            </Jumbotron>
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-10 md-offset-1">
-            <article>
-              <h1>Request</h1>
-              <p>
-                {requests.request}
-              </p>
-            </article>
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-2">
-            <Link to="/">← Back to Watevr</Link>
-          </Col>
-        </Row>
-      </Container>
-    );
-  }
+    <Container fluid>
+      <Row>
+        <Col size="md-12">
+          <Jumbotron>
+            <h1>
+              {requests.title}
+            </h1>
+          </Jumbotron>
+        </Col>
+      </Row>
+      <Row>
+        <Col size="md-10 md-offset-1">
+          <article>
+            <h1>Request:</h1>
+            <p>
+              {requests.request}
+            </p>
+          </article>
+        </Col>
+      </Row>
+      <Row>
+        <Col size="md-2">
+          <Link to="/">← Back to Watevr</Link>
+        </Col>
+      </Row>
+    </Container>
+  );
+}
 
 
 export default RequestsDetail;

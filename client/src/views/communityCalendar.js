@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { List, ListItem } from "../components/List";
 import { Link } from "react-router-dom";
-import { Col } from "../components/Grid";
+import { Container, Row } from "../components/Grid";
 import API from "../utils/API";
+import community1 from "../images/community1.jpg";
 
 function CommunityCalendar() {
     const [shifts, setShifts] = useState([])
@@ -29,25 +30,28 @@ function CommunityCalendar() {
                 }}>
                 Calendar Here!
             </p>
-            <Col size="md-6 sm-12">
-                {shifts.length ? (
-                    <List>
-                        {shifts.map(shifts => (
-                            <ListItem key={shifts._id}>
-                                <Link to={"/community_calendar/" + shifts._id}>
-                                    <strong>
-                                        {shifts.eventTitle} at {shifts.eventLocation}
-                                    </strong>
-                                </Link>
+            <Container fluid>
+                <Row>
+                    <img src={community1} alt="calendar" />
 
-                            </ListItem>
-                        ))}
-                    </List>
-                ) : (
-                    <h3>No Results to Display</h3>
-                )}
-            </Col>
+                    {shifts.length ? (
+                        <List>
+                            {shifts.map(shifts => (
+                                <ListItem key={shifts._id}>
+                                    <Link to={"/community_calendar/" + shifts._id}>
+                                        <strong>
+                                            {shifts.eventTitle} at {shifts.eventLocation}
+                                        </strong>
+                                    </Link>
 
+                                </ListItem>
+                            ))}
+                        </List>
+                    ) : (
+                            <h3>No Results to Display</h3>
+                        )}
+                </Row>
+            </Container>
         </div>
     )
 }
