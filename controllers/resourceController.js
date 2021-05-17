@@ -1,6 +1,5 @@
 const db = require("../models");
 
-// Defining methods for the usersController
 module.exports = {
     findAll: function (req, res) {
         db.Resource
@@ -37,11 +36,8 @@ module.exports = {
     findOnCondition: function (req, res) {
         // console.log(req.body);
         db.Resource
-            .find({ authID: req.body.authID})
+            .find({ authID: req.body.authID })
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     }
 };
-
-
-
