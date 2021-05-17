@@ -1,54 +1,53 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import DeleteBtn from "../components/DeleteBtn";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
+import UserContext from "../utils/userContext";
 
 function Shifts() {
-  // Setting our component's initial state
   const [shifts, setShifts] = useState([])
   const [formObject, setFormObject] = useState({})
+  const { user } = useContext(UserContext);
 
-  // Load all books and store them with setBooks
   useEffect(() => {
     loadShifts()
   }, [])
 
-  // Loads all books and sets them to books
   function loadShifts() {
-    API.getShifts()
+    let userID = user.sub.split("|");
+    let authID = userID[1];
+    API.getShifts(authID)
       .then(res =>
         setShifts(res.data)
       )
       .catch(err => console.log(err));
   };
 
-  // Deletes a book from the database with a given id, then reloads books from the db
   function deleteShift(id) {
     API.deleteShift(id)
       .then(res => loadShifts())
       .catch(err => console.log(err));
   }
 
-  // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
     const { name, value } = event.target;
     setFormObject({ ...formObject, [name]: value })
   };
 
-  // When the form is submitted, use the API.saveBook method to save the book data
-  // Then reload books from the database
   function handleFormSubmit(event) {
     event.preventDefault();
     if (formObject.eventTitle && formObject.eventLocation) {
+      let userID = user.sub.split("|");
+      let authID = userID[1];
       API.saveShift({
-        // userID: this.userID, 
-        // userEmail: this.userEmail,
         eventTitle: formObject.eventTitle,
         eventLocation: formObject.eventLocation,
-        eventDetails: formObject.eventDetails
+        eventDetails: formObject.eventDetails, 
+        user: user.email, 
+        authID: authID
       })
         .then(res => loadShifts())
         .catch(err => console.log(err));
@@ -79,7 +78,7 @@ function Shifts() {
                 disabled={!(formObject.eventTitle && formObject.eventDetails)}
                 onClick={handleFormSubmit}
               >
-                Post Opportunity
+                post a volunteer opportunity
               </FormBtn>
           </form>
         </Col>

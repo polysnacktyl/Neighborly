@@ -7,7 +7,6 @@ import UserContext from "../utils/userContext"
 
 const Profile = () => {
   const { user } = useContext(UserContext)
-  // const { name, picture, email } = user;
   //wait for the page to finish loading
   function ready(newUser) {
     if (document.readyState !== 'loading') {

@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 var uniqueValidator = require('mongoose-unique-validator')
-// const userID = require("./user")
 
 const resourceSchema = new mongoose.Schema({
     user: { type: String },
