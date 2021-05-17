@@ -5,8 +5,10 @@ router.route("/")
   .get(requestsController.findAll)
   .post(requestsController.create);
 
-router
-  .route("/:id")
+router.route("/auth")
+  .post(requestsController.findOnCondition);
+
+router.route("/:id")
   .get(requestsController.findById)
   .put(requestsController.update)
   .delete(requestsController.remove);
