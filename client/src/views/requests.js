@@ -55,7 +55,7 @@ function Requests() {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-6">
+          <Col size="md-6 sm-12">
             <form>
               <Input
                 onChange={handleInputChange}
