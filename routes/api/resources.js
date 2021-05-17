@@ -6,16 +6,13 @@ router.route("/")
     .get(resourceController.findAll)
     .post(resourceController.create);
 
+router.route("/auth")
+    .post(resourceController.findOnCondition);
+
 // Matches with "/api/books/:id"
-router
-    .route("/:id")
+router.route("/:id")
     .get(resourceController.findById)
     .put(resourceController.update)
     .delete(resourceController.remove);
-
-router
-    .route("/:user")
-    .get(resourceController.findAllByUser)
-
 
 module.exports = router;
