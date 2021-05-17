@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const resourceController = require("../../controllers/resourceController");
 
-// Matches with "/api/books"
 router.route("/")
     .get(resourceController.findAll)
     .post(resourceController.create);
@@ -9,7 +8,6 @@ router.route("/")
 router.route("/auth")
     .post(resourceController.findOnCondition);
 
-// Matches with "/api/books/:id"
 router.route("/:id")
     .get(resourceController.findById)
     .put(resourceController.update)

@@ -5,10 +5,6 @@ import API from "../utils/API";
 
 function ResourceDetails(props) {
     const [resource, setResource] = useState({})
-
-    // When this component mounts, grab the book with the _id of props.match.params.id
-    // e.g. localhost:3000/books/599dcb67f0f16317844583fc
-    // const {id} = useParams()
     const { id } = useParams()
     useEffect(() => {
         API.getResource(id)

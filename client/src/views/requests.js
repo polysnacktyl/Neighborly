@@ -1,54 +1,51 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import DeleteBtn from "../components/DeleteBtn";
-import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
-import "../components/style.css";
-
+import UserContext from "../utils/userContext";
 
 function Requests() {
-  // Setting our component's initial state
   const [Requests, setRequests] = useState([])
   const [formObject, setFormObject] = useState({})
+  const { user } = useContext(UserContext);
 
-  // Load all Requests and store them with setRequests
   useEffect(() => {
     loadRequests()
   }, [])
 
-  // Loads all Requests and sets them to Requests
   function loadRequests() {
-    API.getRequests()
+    let userID = user.sub.split("|");
+    let authID = userID[1];
+    API.getRequests(authID)
       .then(res => 
         setRequests(res.data)
       )
       .catch(err => console.log(err));
   };
 
-  // Deletes a request from the database with a given id, then reloads Requests from the db
   function deleteRequests(id) {
     API.deleteRequests(id)
       .then(res => loadRequests())
       .catch(err => console.log(err));
   }
 
-  // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
     const { name, value } = event.target;
     setFormObject({...formObject, [name]: value})
   };
 
-  // When the form is submitted, use the API.saveRequest method to save the request data
-  // Then reload Requests from the database
   function handleFormSubmit(event) {
     event.preventDefault();
     if (formObject.title && formObject.request) {
+      let userID = user.sub.split("|");
+      let authID = userID[1];
       API.saveRequests({
         title: formObject.title,
         request: formObject.request,
+        authID: authID
       })
         .then(res => loadRequests())
         .catch(err => console.log(err));
@@ -59,9 +56,6 @@ function Requests() {
       <Container fluid>
         <Row>
           <Col size="md-6 sm-12">
-            {/* <Jumbotron> */}
-              <h1 className="community">Do You Need Help? Make A Request.</h1>
-            {/* </Jumbotron> */}
             <form>
               <Input
                 onChange={handleInputChange}
@@ -82,9 +76,6 @@ function Requests() {
             </form>
           </Col>
           <Col size="md-6 sm-12">
-            {/* <Jumbotron> */}
-              <h1 className="community">Come Help A Neighbor</h1>
-            {/* </Jumbotron> */}
             {Requests.length ? (
               <List>
                 {Requests.map(requests => (

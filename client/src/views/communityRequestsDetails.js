@@ -6,10 +6,6 @@ import API from "../utils/API";
 
 function CommunityRequestsDetail(props) {
     const [requests, setRequests] = useState({})
-
-    // When this component mounts, grab the requests with the _id of props.match.params.id
-    // e.g. localhost:3000/requestss/599dcb67f0f16317844583fc
-    // const {id} = useParams()
     const { id } = useParams()
     useEffect(() => {
         API.getCommunityRequest(id)

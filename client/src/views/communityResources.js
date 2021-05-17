@@ -1,23 +1,17 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { List, ListItem } from "../components/List";
 import { Link } from "react-router-dom";
 import { Col } from "../components/Grid";
-// import Resources from "./resource";
 import API from "../utils/API";
-import UserContext from "../utils/userContext";
-
 
 function CommunityResources() {
-    const { user } = useContext(UserContext);
-
     const [resources, setResources] = useState([])
-
     useEffect(() => {
         loadResources()
     }, [])
 
     function loadResources() {
-        API.getResources(user.email)
+        API.getAllResources()
             .then(res =>
                 setResources(res.data)
             )
@@ -33,7 +27,7 @@ function CommunityResources() {
                     fontSize: "24px",
                     textShadow: "2px 2px #004d26"
                 }}>
-                Resource Offers Here!
+                See What Your Neighbors are Sharing
             </p>
             <Col size="md-6 sm-12">
 
@@ -50,8 +44,8 @@ function CommunityResources() {
                         ))}
                     </List>
                 ) : (
-                        <h3>No Results to Display</h3>
-                    )}
+                    <h3>No Results to Display</h3>
+                )}
             </Col>
 
         </div>

@@ -2,20 +2,16 @@ import React, { useState, useEffect } from "react";
 import { List, ListItem } from "../components/List";
 import { Link } from "react-router-dom";
 import { Col } from "../components/Grid";
-// import Resources from "./resource";
 import API from "../utils/API";
 
 function CommunityCalendar() {
-
-
     const [shifts, setShifts] = useState([])
-
     useEffect(() => {
         loadShifts()
     }, [])
 
     function loadShifts() {
-        API.getShifts()
+        API.getAllShifts()
             .then(res =>
                 setShifts(res.data)
             )
@@ -48,8 +44,8 @@ function CommunityCalendar() {
                         ))}
                     </List>
                 ) : (
-                        <h3>No Results to Display</h3>
-                    )}
+                    <h3>No Results to Display</h3>
+                )}
             </Col>
 
         </div>

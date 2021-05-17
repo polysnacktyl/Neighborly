@@ -2,14 +2,9 @@ import React, { useState, useEffect } from "react";
 import { List, ListItem } from "../components/List";
 import { Link } from "react-router-dom";
 import { Col } from "../components/Grid";
-// import Resources from "./resource";
 import API from "../utils/API";
 
-
-
 function CommunityRequests() {
-
-
     const [Requests, setResources] = useState([])
 
     useEffect(() => {
@@ -17,7 +12,7 @@ function CommunityRequests() {
     }, [])
 
     function loadRequests() {
-        API.getRequests()
+        API.getAllRequests()
             .then(res =>
                 setResources(res.data)
             )

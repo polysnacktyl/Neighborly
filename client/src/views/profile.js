@@ -10,7 +10,6 @@ import "../components/style.css";
 
 const Profile = () => {
   const { user } = useContext(UserContext)
-  // const { name, picture, email } = user;
   //wait for the page to finish loading
   function ready(newUser) {
     if (document.readyState !== 'loading') {
