@@ -16,7 +16,13 @@ export function Date(props) {
     </div>
   );
 }
-
+export function Time(props) { 
+  return (
+    <div className="form-group"> 
+    <input className="form-control" {...props} /> 
+    </div>
+  );
+}
 export function TextArea(props) {
   return (
     <div className="form-group">

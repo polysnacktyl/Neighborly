@@ -4,7 +4,7 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/Form";
+import { Input, TextArea, FormBtn, Time, Date } from "../components/Form";
 import UserContext from "../utils/userContext";
 
 function Shifts() {
@@ -74,6 +74,21 @@ function Shifts() {
               name="eventDetails"
               placeholder="Details"
             />
+            <label> event date </label> 
+            <Date
+              onChange={handleInputChange}
+              name="dateAvailable"
+              placeholder="Date available (required)"
+            />
+            <label> start time </label> 
+            <Time
+            type="time" 
+            /> 
+             <label> end time </label> 
+            <Time
+            type="time" 
+            /> 
+
             <div
               onChange={handleInputChange}
               name="user"
@@ -103,8 +118,8 @@ function Shifts() {
               ))}
             </List>
           ) : (
-              <h3>No Results to Display</h3>
-            )}
+            <h3>No Results to Display</h3>
+          )}
         </Col>
       </Row>
     </Container>
