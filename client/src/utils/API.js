@@ -41,9 +41,20 @@ export default {
     return axios.get("/api/community_calendar/" + id);
   },
   // Gets all resources by user
-  getResources: function (user) {
-    return axios.get("/api/resources/" + user);
+
+  //-----------------------------------------------//
+
+
+  getResources: function (authID) {
+    return axios.post("/api/resources/auth",  { authID: authID });
   },
+// essentially--this had to get changed from GET to POST because post 
+// is somehow more secure than get which was thusly not sending back 
+// any of the information we were trying to call from the front end
+// i swear to jeebus this is the same manner of issue i had last project 
+// and i'm gonna be mad about it till i die. 
+
+  //-----------------------------------------------//
   // Gets the resource with the given id
   getResource: function (id) {
     return axios.get("/api/resources/" + id);

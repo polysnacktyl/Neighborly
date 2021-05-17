@@ -21,6 +21,7 @@ const Profile = () => {
   }
   //set user entry variables from auth0 login return
   let userID = user.sub.split("|");
+  let authID = userID[1];
   let userEmail = user.email;
   console.log(userID);
   console.log(userID[1]);
@@ -29,7 +30,8 @@ const Profile = () => {
     //create new entry in User collection with auth0-specific id and email used to login. 
     API.saveUser({
       userID: userID[1],
-      userEmail: userEmail
+      userEmail: userEmail,
+      authID: authID
     })
       .catch(err => console.log(err));
   })
