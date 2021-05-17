@@ -8,8 +8,8 @@ const resourceSchema = new mongoose.Schema({
     dateMade: { type: Date, default: Date.now },
     dateAvailable: { type: String, required: true },
     details: { type: String, required: true },
-    status: { type: String, required: true }
-
+    status: { type: String, required: true },
+    authID: {type: String, required: false}
 });
 resourceSchema.plugin(uniqueValidator)
 const Resource = mongoose.model("Resource", resourceSchema);

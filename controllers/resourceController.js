@@ -34,10 +34,14 @@ module.exports = {
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
-    findAllByUser: function (req, res) {
+    findOnCondition: function (req, res) {
+        // console.log(req.body);
         db.Resource
-            .find(req.params.user)
+            .find({ authID: req.body.authID})
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
-    },
+    }
 };
+
+
+
