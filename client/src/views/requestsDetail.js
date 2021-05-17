@@ -23,7 +23,7 @@ function RequestsDetail(props) {
           <Col size="md-12">
             <Jumbotron>
               <h1>
-                {requests.title} by {requests.requests}
+                {requests.title} 
               </h1>
             </Jumbotron>
           </Col>
@@ -33,7 +33,7 @@ function RequestsDetail(props) {
             <article>
               <h1>Request</h1>
               <p>
-                {requests.requests}
+                {requests.request}
               </p>
             </article>
           </Col>
