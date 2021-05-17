@@ -21,25 +21,18 @@ function Resources() {
     // }, [])
 
     useEffect(() => {
-        console.log(resources)
-        console.log(user.email)
-        console.log(user)
-        console.log(formObject)
-
-
         loadResources()
-
-
+        // console.log(resources)
+        // console.log(user.email)
+        console.log(user)
+        // console.log(formObject)
     }, [])
 
     // Loads all books and sets them to books
     function loadResources() {
-        console.log(resources)
-        console.log(user.email)
-        console.log(user)
-        console.log(formObject)
-        API.getResources(user.email)
-
+        let userID = user.sub.split("|");
+        let authID = userID[1];
+        API.getResources(authID)
             .then(res =>
                 setResources(res.data)
             )
@@ -63,24 +56,17 @@ function Resources() {
     // Then reload books from the database
     function handleFormSubmit(event) {
         event.preventDefault();
-        // console.log(formObject)
-        // console.log(user)
-        // console.log(user.email)
-        // console.log(resources)
-
         if (formObject.dateAvailable && formObject.details && formObject.status) {
-            console.log(formObject)
-            console.log(user)
-            console.log(user.email)
-            console.log(resources)
-
-
-
+            let userID = user.sub.split("|");
+            let authID = userID[1];
             API.saveResource({
+              
                 dateAvailable: formObject.dateAvailable,
                 details: formObject.details,
                 status: formObject.status,
-                user: user.email
+                user: user.email,
+                authID: authID
+
 
             })
 
