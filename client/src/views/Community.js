@@ -2,9 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import "../components/style.css";
-// import community from "../images/community.jpg";
-// import community1 from "../images/community1.jpg";
-// import community2 from "../images/community2.jpg";
 
 function Community() {
     return (
@@ -53,11 +50,6 @@ function Community() {
                         </div>
                     </div>
                 </Row>
-                {/* <Row>
-                    <img src={community1} alt="group of girls volunteering" />
-                    <img src={community} alt="girl writing on heart wall" />
-                    <img src={community2} alt="volunteers in California" />
-                </Row> */}
             </Container >
         </div>
     );

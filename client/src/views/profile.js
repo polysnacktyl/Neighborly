@@ -4,9 +4,6 @@ import { Col, Row, Container } from "../components/Grid";
 import API from "../utils/API";
 import UserContext from "../utils/userContext"
 import "../components/style.css";
-// import userImage1 from "../images/userImage1.jpg";
-// import userImage from "../images/userImage.jpg";
-// import userImage2 from "../images/userImage2.jpg";
 
 const Profile = () => {
   const { user } = useContext(UserContext)
@@ -78,11 +75,6 @@ const Profile = () => {
           </div>
         </div>
       </Row>
-      {/* <Row>
-        <img src={userImage} alt="people holding hands" />
-        <img src={userImage2} alt="charity event race" />
-        <img src={userImage1} alt="man and boy" />
-      </Row> */}
     </Container>
   );
 };
