@@ -8,7 +8,7 @@ import "./index.css";
 
 ReactDOM.render(
   <Router>
-    <Auth0ProviderWithHistory>
+    <Auth0ProviderWithHistory>    
       <App />
     </Auth0ProviderWithHistory>
   </Router>,
