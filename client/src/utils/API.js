@@ -5,8 +5,8 @@ export default {
     return axios.post("/api/user", userData)
   },
 
-//--------------- SHIFTS ---------------//
-  getAllShifts: function() { 
+  //--------------- SHIFTS ---------------//
+  getAllShifts: function () {
     return axios.get("/api/shifts");
   },
   getShifts: function (authID) {
@@ -22,15 +22,15 @@ export default {
     return axios.post("/api/shifts", shiftData);
   },
   getCommunityShift: function (id) {
-    return axios.get("/api/community_calendar/" + id);
+    return axios.get("/api/shifts/" + id);
   },
 
-//--------------- RESOURCES ---------------//
-  getAllResources: function() { 
+  //--------------- RESOURCES ---------------//
+  getAllResources: function () {
     return axios.get("/api/resources");
   },
-// *note!* this GET function is actually a POST route // 
-//             we are living in wild times           // 
+  // *note!* this GET function is actually a POST route // 
+  //             we are living in wild times           // 
   getResources: function (authID) {
     return axios.post("/api/resources/auth", { authID: authID });
   },
@@ -44,14 +44,14 @@ export default {
     return axios.post("/api/resources/", resourceData);
   },
   getCommunityResource: function (id) {
-    return axios.get("/api/community_resources/" + id);
+    return axios.get("/api/resources/" + id);
   },
 
   //--------------- REQUESTS ---------------//
   getRequests: function (authID) {
     return axios.post("/api/requests/auth", { authID: authID });
   },
-  getAllRequests: function() {
+  getAllRequests: function () {
     return axios.get("/api/requests")
   },
   getRequest: function (id) {
@@ -64,6 +64,6 @@ export default {
     return axios.post("/api/requests/", requestsData);
   },
   getCommunityRequest: function (id) {
-    return axios.get("/api/community_requests/" + id);
+    return axios.get("/api/requests/" + id);
   },
 };
