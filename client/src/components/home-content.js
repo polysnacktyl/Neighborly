@@ -10,10 +10,10 @@ const HomeContent = () => (
   <div className="next-steps">
     <h2 className="my-5 text-center"
       style={{
-        color: "var(--pale)",
+        color: "var(--forest)",
         fontWeight: "bolder",
         fontSize: "24px",
-        textShadow: "2px 2px var(--forest)"
+        // textShadow: "1px 1px var(--smoke)"
       }}>
       ...neighbors helping neighbors get through hard times &#128151;
     </h2>
@@ -21,7 +21,7 @@ const HomeContent = () => (
       <Row>
         <img src={home} alt="mad and woman gardening" />
         <img src={home2} alt="group of women sitting on stairs" />
-        <img src={home3} alt="man in neighbor baseball cap" /> 
+        <img src={home3} alt="man in neighbor baseball cap" />
       </Row>
     </Container>
   </div>

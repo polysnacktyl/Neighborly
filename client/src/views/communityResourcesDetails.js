@@ -18,25 +18,41 @@ function CommunityResourcesDetails(props) {
             <Row>
                 <Col size="md-12">
 
-                    <h4>
+                    <h4 style={{
+                        textAlign: "center",
+                        marginBottom: "10px",
+                        color: "#004d26"
+                    }}>
                         {resource.dateAvailable}
                     </h4>
-                    <p>status:  {resource.status}</p>
+                    <h5 style={{
+                        textAlign: "center",
+                        marginBottom: "10px",
+                        color: "#004d26"
+                    }}>status:  {resource.status}</h5>
                 </Col>
             </Row>
             <Row>
                 <Col size="md-10 md-offset-1">
                     <article>
-                        <h3>resource offer details</h3>
-                        <p>
+                        <h5 style={{
+                            textAlign: "center",
+                            marginBottom: "10px",
+                            color: "#004d26"
+                        }}>resource offer details</h5>
+                        <h6 style={{
+                            textAlign: "center",
+                            marginBottom: "10px",
+                            color: "#004d26"
+                        }}>
                             {resource.details}
-                        </p>
+                        </h6>
                     </article>
                 </Col>
             </Row>
             <Row>
-                <Col size="md-2">
-                    <Link to="/resources">back to all resources</Link>
+                <Col size="md-12">
+                    <Link to="/community_resources/" style={{ color: "#004d26" }} >← Back to all resources</Link>
                 </Col>
             </Row>
         </Container>

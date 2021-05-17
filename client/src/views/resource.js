@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import UserContext from "../utils/userContext";
+import "../components/style.css";
 
 function Resources() {
     const [resources, setResources] = useState([])
@@ -33,14 +34,15 @@ function Resources() {
 
 
     return (
-        < Container fluid >
+        < Container fluid  >
             <Row>
 
-                <Col size="md-6 sm-12">
+                <Col className="list" size="md-6 sm-12">
+                    <h4 style={{ textAlign: "center", color: "#004d26" }}> {user.given_name}'s resource offers made to the community</h4>
                     {resources.length ? (
-                        <List>
+                        <List >
                             {resources.map(resources => (
-                                <ListItem key={resources._id}>
+                                <ListItem key={resources._id} >
                                     <Link to={"/community_resources/" + resources._id}>
                                         <strong>
                                             available on {resources.dateAvailable}, and {resources.details}
@@ -51,7 +53,7 @@ function Resources() {
                             ))}
                         </List>
                     ) : (
-                            <h3>No Results to Display</h3>
+                            <h3 style={{ textAlign: "center", color: "#004d26", marginTop: "100px" }}>No Resources to Display</h3>
                         )}
                 </Col>
             </Row>

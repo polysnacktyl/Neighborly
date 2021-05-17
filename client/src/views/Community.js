@@ -6,7 +6,7 @@ import "../components/style.css";
 function Community() {
     return (
 
-        <div className="community">
+        <div>
             <Container fluid>
                 <Row>
                     <Col size="md-12">
