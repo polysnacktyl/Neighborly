@@ -14,19 +14,34 @@
 
   body {
     background: linear-gradient(to bottom, #99ffcc, #ffffff);
+    background-repeat: no-repeat;
   }
 
-footer {
+.footer {
+    
       position: fixed;
-      height: 50px;
+      /* height: 50px; */
       bottom: 0;
-      width: 100%;
+      /* width: 100%; */
       color: var(--pale);
-      text-shadow: 2px 2px var(--forest);
-      font-size: 30px;
+      text-shadow: 1px 1px var(--smoke);
+      font-size: 150%;
   }
+
+  .footer a {
+    display: flex;
+    color: var(--forest);
+    justify-content: center;
+  }
+
+  footer a:hover{
+    color: var(--forest);
+    text-decoration: none;
+  }
+
 
 .navbar {
+font-size: 1.5rem;
 background-color: var(--aqua);
 color: var(--mint);
 text-shadow: 2px 2px var(--forest);
@@ -38,7 +53,7 @@ text-shadow: 2px 2px var(--forest);
   }
 
 .navbar a:hover {
-        color: var(--mint);
+        color: var(--forest);
         text-shadow: 1px 1px var(--pale);
   }
 
@@ -49,6 +64,7 @@ text-shadow: 2px 2px var(--forest);
   box-shadow: 6px 6px 6px 6px rgb(65, 63, 63), 0 6px 6px #999;
   height: 400px;
   text-align:center;
+  margin-bottom: 10px;
 }
 
 .card-body {
@@ -79,23 +95,19 @@ text-shadow: 2px 2px var(--forest);
   text-shadow: 2px 2px var(--forest);
 }
 
-.card-title:hover {
+/* .card-title:hover {
   color: var(--mint);
   font-weight: bolder;
   font-size: 24px;
   text-shadow: 2px 2px var(--forest);
-}
+} */
 
 .card-text {
-  color: var(--mint);
-  text-shadow: 1px 1px var(--forest);
+  color: var(--forest);
+  
   
 }
 
-.card-text:hover {
-  color: var(--forest);
-  text-shadow: 2px 2px var(--mint);
-}
 
 .btn-view {
   background-image: url("../images/background.png");
@@ -107,13 +119,14 @@ text-shadow: 2px 2px var(--forest);
 .btn-view:hover {
   background-image: url("../images/background3.png");
   box-shadow: inset 0px 0px 8px var(--smoke), 0 0 15px var(--orchid);
-  color: var(--mint);
+  color: var(--forest);
   text-shadow: 1px 1px var(--pale);
 }
 
 .community {
-  color: var(--aqua);
-  text-shadow: 2px 2px var(--forest);
+  color: var(--forest);
+  text-shadow: 1px 1px var(--smoke);
+  margin-bottom: 50px;
   
 }
 

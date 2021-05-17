@@ -16,30 +16,42 @@ function CommunityRequestsDetail(props) {
     return (
         <Container fluid>
             <Row>
-                <Col size="md-12">
-                    <Jumbotron>
-                        <h1>
-                            {requests.title} by {requests.requests}
-                        </h1>
-                    </Jumbotron>
+                <Col size="md-12 ">
+                    <h4 style={{
+                        textAlign: "center",
+                        marginBottom: "10px",
+                        color: "#004d26"
+                    }}>
+                        Need help on {requests.dateAvailable}
+                    </h4>
                 </Col>
             </Row>
             <Row>
-                <Col size="md-10 md-offset-1">
+                <Col size="md-12">
                     <article>
-                        <h1>Request</h1>
-                        <p>
-                            {requests.requests}
-                        </p>
+                        <h5 style={{
+                            textAlign: "center",
+                            marginBottom: "10px",
+                            color: "#004d26"
+                        }}>
+                            Request details:
+                        </h5>
+                        <h6 style={{
+                            textAlign: "center",
+                            marginBottom: "10px",
+                            color: "#004d26"
+                        }}>
+                            {requests.request}
+                        </h6>
                     </article>
                 </Col>
             </Row>
             <Row>
-                <Col size="md-2">
-                    <Link to="/">← Back to Watevr</Link>
+                <Col size="md-12 mt-10"  >
+                    <Link to="/community_requests/" style={{ color: "#004d26" }} >← Back to all Community requests</Link>
                 </Col>
             </Row>
-        </Container>
+        </Container >
     );
 }
 

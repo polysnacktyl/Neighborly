@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./style.css";
 // This file exports the Input, TextArea, and FormBtn components
 
 export function Input(props) {
@@ -27,7 +27,7 @@ export function TextArea(props) {
 
 export function Radio(props) {
   return (
-    <div className="form-group">
+    <div className="form-group radio">
       <input type="radio" value="Available"{...props} /> I am willing to help out!
     </div>
   );

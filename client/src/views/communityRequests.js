@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from "react";
-import DeleteBtn from "../components/DeleteBtn";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
@@ -53,8 +52,9 @@ function Requests() {
         <Container fluid>
             <Row>
                 <Col size="md-6 sm-12">
+                    <h4 style={{ textAlign: "center", color: "#004d26" }}>Post a request to the community</h4>
                     <form>
-                        <h6>Enter date available:</h6>
+                        <h6 style={{ color: "#004d26" }}>Enter date you need help:</h6>
                         <Date
 
                             onChange={handleInputChange}
@@ -85,7 +85,9 @@ function Requests() {
               </FormBtn>
                     </form>
                 </Col>
+
                 <Col size="md-6 sm-12">
+                    <h4 style={{ textAlign: "center", color: "#004d26", marginBottom: "33px" }}>Requests made to the community</h4>
                     {Requests.length ? (
                         <List>
                             {Requests.map(requests => (
