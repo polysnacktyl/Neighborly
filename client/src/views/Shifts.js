@@ -9,7 +9,6 @@ import UserContext from "../utils/userContext";
 
 function Shifts() {
   const [shifts, setShifts] = useState([])
-  const [formObject, setFormObject] = useState({})
   const { user } = useContext(UserContext);
 
   useEffect(() => {
@@ -32,27 +31,7 @@ function Shifts() {
       .catch(err => console.log(err));
   }
 
-  function handleInputChange(event) {
-    const { name, value } = event.target;
-    setFormObject({ ...formObject, [name]: value })
-  };
 
-  function handleFormSubmit(event) {
-    event.preventDefault();
-    if (formObject.eventTitle && formObject.eventLocation) {
-      let userID = user.sub.split("|");
-      let authID = userID[1];
-      API.saveShift({
-        eventTitle: formObject.eventTitle,
-        eventLocation: formObject.eventLocation,
-        eventDetails: formObject.eventDetails,
-        user: user.email,
-        authID: authID
-      })
-        .then(res => loadShifts())
-        .catch(err => console.log(err));
-    }
-  };
 
   return (
     <Container fluid>
@@ -104,6 +83,7 @@ function Shifts() {
           </form>
         </Col>
         <Col size="md-6 sm-12">
+          <h4 style={{ textAlign: "center", color: "#004d26" }}> {user.given_name}'s volunteer shifts made available to the community</h4>
           {shifts.length ? (
             <List>
               {shifts.map(shifts => (
@@ -118,8 +98,8 @@ function Shifts() {
               ))}
             </List>
           ) : (
-            <h3>No Results to Display</h3>
-          )}
+              <h3 style={{ textAlign: "center", color: "#004d26", marginTop: "100px" }}>No Shifts to Display</h3>
+            )}
         </Col>
       </Row>
     </Container>
