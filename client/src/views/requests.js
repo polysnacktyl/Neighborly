@@ -4,12 +4,10 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/Form";
 import UserContext from "../utils/userContext";
 
 function Requests() {
   const [Requests, setRequests] = useState([])
-  const [formObject, setFormObject] = useState({})
   const { user } = useContext(UserContext);
 
   useEffect(() => {
@@ -32,56 +30,11 @@ function Requests() {
       .catch(err => console.log(err));
   }
 
-  function handleInputChange(event) {
-    const { name, value } = event.target;
-    setFormObject({ ...formObject, [name]: value })
-  };
 
-  function handleFormSubmit(event) {
-    event.preventDefault();
-    if (formObject.title && formObject.request) {
-      let userID = user.sub.split("|");
-      let authID = userID[1];
-      API.saveRequests({
-        title: formObject.title,
-        request: formObject.request,
-        user: user.email,
-        authID: authID
-      })
-        .then(res => loadRequests())
-        .catch(err => console.log(err));
-    }
-  };
 
   return (
     <Container fluid>
       <Row>
-        <Col size="md-6 sm-12">
-          <form>
-            <Input
-              onChange={handleInputChange}
-              name="title"
-              placeholder="title (required)"
-            />
-            <TextArea
-              onChange={handleInputChange}
-              name="request"
-              placeholder="request (required)"
-            />
-            <div
-              onChange={handleInputChange}
-              name="user"
-              value={user.email}
-
-            />
-            <FormBtn
-              disabled={!(formObject.title && formObject.request)}
-              onClick={handleFormSubmit}
-            >
-              Submit Request
-              </FormBtn>
-          </form>
-        </Col>
         <Col size="md-6 sm-12">
           {Requests.length ? (
             <List>
