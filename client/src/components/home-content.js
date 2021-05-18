@@ -13,6 +13,7 @@ const HomeContent = () => (
         color: "var(--forest)",
         fontWeight: "bolder",
         fontSize: "24px",
+        fontFamily: "'Montserrat', sans-serif"
         // textShadow: "1px 1px var(--smoke)"
       }}>
       ...neighbors helping neighbors get through hard times &#128151;

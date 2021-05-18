@@ -17,18 +17,19 @@ function CommunityResourcesDetails(props) {
         <Container fluid>
             <Row>
                 <Col size="md-12">
-
                     <h4 style={{
                         textAlign: "center",
                         marginBottom: "10px",
-                        color: "#004d26"
+                        color: "#004d26",
+                        fontFamily: "'Montserrat', sans-serif"
                     }}>
-                        {resource.dateAvailable}
+                        Date Available To Help Out: {resource.dateAvailable}
                     </h4>
                     <h5 style={{
                         textAlign: "center",
                         marginBottom: "10px",
-                        color: "#004d26"
+                        color: "#004d26",
+                        fontFamily: "'Montserrat', sans-serif"
                     }}>status:  {resource.status}</h5>
                 </Col>
             </Row>
@@ -38,21 +39,19 @@ function CommunityResourcesDetails(props) {
                         <h5 style={{
                             textAlign: "center",
                             marginBottom: "10px",
-                            color: "#004d26"
-                        }}>resource offer details</h5>
-                        <h6 style={{
-                            textAlign: "center",
-                            marginBottom: "10px",
-                            color: "#004d26"
-                        }}>
-                            {resource.details}
-                        </h6>
+                            color: "#004d26",
+                            fontFamily: "'Montserrat', sans-serif"
+                        }}>resource offer details: {resource.details}</h5>
+
                     </article>
                 </Col>
             </Row>
             <Row>
                 <Col size="md-12">
-                    <Link to="/community_resources/" style={{ color: "#004d26" }} >← Back to all resources</Link>
+                    <Link to="/community_resources/" style={{
+                        color: "#004d26",
+                        fontFamily: "'Montserrat', sans-serif"
+                    }} >← Back to all resources</Link>
                 </Col>
             </Row>
         </Container>

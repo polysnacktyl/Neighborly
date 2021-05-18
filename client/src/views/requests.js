@@ -37,7 +37,10 @@ function Requests() {
     <Container fluid>
       <Row>
         <Col size="md-6 sm-12">
-          <h4 style={{ textAlign: "center", color: "#004d26" }}> {user.given_name}'s requests made to the community</h4>
+          <h4 style={{
+            textAlign: "center", color: "#004d26", marginBottom: "40px", marginTop: "40px",
+            fontFamily: "'Montserrat', sans-serif"
+          }}> {user.given_name}'s requests made to the community</h4>
           {Requests.length ? (
             <List>
               {Requests.map(requests => (
@@ -52,7 +55,10 @@ function Requests() {
               ))}
             </List>
           ) : (
-              <h3 style={{ textAlign: "center", color: "#004d26", marginTop: "100px" }}>No Requests to Display</h3>
+              <h3 style={{
+                textAlign: "center", color: "#004d26", marginTop: "100px",
+                fontFamily: "'Montserrat', sans-serif"
+              }}>No Requests to Display</h3>
             )}
         </Col>
       </Row>

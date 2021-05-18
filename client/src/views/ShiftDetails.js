@@ -18,25 +18,49 @@ function ShiftDetails(props) {
       <Row>
         <Col size="md-12">
 
-          <h3>
+          <h4 style={{
+            textAlign: "center",
+            marginBottom: "10px",
+            color: "#004d26",
+            fontFamily: "'Montserrat', sans-serif"
+          }}>
             {shift.eventTitle}
-          </h3>
-          <p>location:  {shift.eventLocation}</p>
+          </h4>
+          <h5 style={{
+            textAlign: "center",
+            marginBottom: "10px",
+            color: "#004d26",
+            fontFamily: "'Montserrat', sans-serif"
+          }}>
+            Need help on: {shift.dateAvailable}
+          </h5>
+
         </Col>
       </Row>
       <Row>
         <Col size="md-10 md-offset-1">
           <article>
-            <h1>deetz</h1>
-            <p>
-              {shift.eventDetails}
-            </p>
+            <h5 style={{
+              textAlign: "center",
+              marginBottom: "10px",
+              color: "#004d26",
+              fontFamily: "'Montserrat', sans-serif"
+            }}>Volunteer event location: {shift.eventLocation}</h5>
+            <h6 style={{
+              textAlign: "center",
+              marginBottom: "10px",
+              color: "#004d26",
+              fontFamily: "'Montserrat', sans-serif"
+            }}>Volunteer details: {shift.eventDetails}</h6>
           </article>
         </Col>
       </Row>
       <Row>
-        <Col size="md-2">
-          <Link to="/">back to...wherever</Link>
+        <Col size="md-12">
+          <Link to="/shifts/" style={{
+            color: "#004d26",
+            fontFamily: "'Montserrat', sans-serif"
+          }} >← Back to all your volunteer opportunities</Link>
         </Col>
       </Row>
     </Container>

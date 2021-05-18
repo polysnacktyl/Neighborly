@@ -20,7 +20,8 @@ function CommunityRequestsDetail(props) {
                     <h4 style={{
                         textAlign: "center",
                         marginBottom: "10px",
-                        color: "#004d26"
+                        color: "#004d26",
+                        fontFamily: "'Montserrat', sans-serif"
                     }}>
                         Need help on {requests.dateAvailable}
                     </h4>
@@ -32,14 +33,16 @@ function CommunityRequestsDetail(props) {
                         <h5 style={{
                             textAlign: "center",
                             marginBottom: "10px",
-                            color: "#004d26"
+                            color: "#004d26",
+                            fontFamily: "'Montserrat', sans-serif"
                         }}>
                             Request details:
                         </h5>
                         <h6 style={{
                             textAlign: "center",
                             marginBottom: "10px",
-                            color: "#004d26"
+                            color: "#004d26",
+                            fontFamily: "'Montserrat', sans-serif"
                         }}>
                             {requests.request}
                         </h6>
@@ -48,7 +51,10 @@ function CommunityRequestsDetail(props) {
             </Row>
             <Row>
                 <Col size="md-12 mt-10"  >
-                    <Link to="/community_requests/" style={{ color: "#004d26" }} >← Back to all Community requests</Link>
+                    <Link to="/community_requests/" style={{
+                        color: "#004d26",
+                        fontFamily: "'Montserrat', sans-serif"
+                    }} >← Back to all community requests</Link>
                 </Col>
             </Row>
         </Container >
