@@ -48,7 +48,7 @@ function CommunityRequestsDetail(props) {
             </Row>
             <Row>
                 <Col size="md-12 mt-10"  >
-                    <Link to="/community_requests/" style={{ color: "#004d26" }} >← Back to all Community requests</Link>
+                    <Link to="/community_requests/" style={{ color: "#004d26" }} >← Back to all community requests</Link>
                 </Col>
             </Row>
         </Container >

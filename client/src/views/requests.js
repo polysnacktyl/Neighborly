@@ -37,7 +37,7 @@ function Requests() {
     <Container fluid>
       <Row>
         <Col size="md-6 sm-12">
-          <h4 style={{ textAlign: "center", color: "#004d26" }}> {user.given_name}'s requests made to the community</h4>
+          <h4 style={{ textAlign: "center", color: "#004d26", marginBottom: "40px", marginTop: "40px" }}> {user.given_name}'s requests made to the community</h4>
           {Requests.length ? (
             <List>
               {Requests.map(requests => (

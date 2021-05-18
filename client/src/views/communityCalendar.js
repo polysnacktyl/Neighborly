@@ -1,39 +1,99 @@
-import React, { useState, useEffect } from "react";
-import { List, ListItem } from "../components/List";
-import { Link } from "react-router-dom";
-import { Container, Row } from "../components/Grid";
+import React, { useState, useEffect, useContext } from "react";
+import DeleteBtn from "../components/DeleteBtn";
 import API from "../utils/API";
-import community1 from "../images/community1.jpg";
+import { Link } from "react-router-dom";
+import { Col, Row, Container } from "../components/Grid";
+import { List, ListItem } from "../components/List";
+import { Input, TextArea, FormBtn, Date } from "../components/Form";
+import UserContext from "../utils/userContext";
 
-function CommunityCalendar() {
+function Shifts() {
     const [shifts, setShifts] = useState([])
+    const [formObject, setFormObject] = useState({})
+    const { user } = useContext(UserContext);
+
     useEffect(() => {
         loadShifts()
     }, [])
 
     function loadShifts() {
-        API.getAllShifts()
+        let userID = user.sub.split("|");
+        let authID = userID[1];
+        API.getAllShifts(authID)
             .then(res =>
                 setShifts(res.data)
             )
             .catch(err => console.log(err));
     };
 
-    return (
-        <div>
-            <p className="text-center calendar"
-                style={{
-                    color: "#99ffcc",
-                    fontWeight: "bolder",
-                    fontSize: "24px",
-                    textShadow: "2px 2px #004d26"
-                }}>
-                Calendar Here!
-            </p>
-            <Container fluid>
-                <Row>
-                    <img src={community1} alt="calendar" />
 
+
+    function handleInputChange(event) {
+        const { name, value } = event.target;
+        setFormObject({ ...formObject, [name]: value })
+    };
+
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        if (formObject.eventTitle && formObject.eventLocation) {
+            let userID = user.sub.split("|");
+            let authID = userID[1];
+            API.saveShift({
+                dateAvailable: formObject.dateAvailable,
+                eventTitle: formObject.eventTitle,
+                eventLocation: formObject.eventLocation,
+                eventDetails: formObject.eventDetails,
+                user: user.email,
+                authID: authID
+            })
+                .then(res => loadShifts())
+                .catch(err => console.log(err));
+        }
+    };
+
+    return (
+        <Container fluid>
+            <Row>
+                <Col size="md-6">
+                    <h4 style={{ textAlign: "center", color: "#004d26", marginBottom: "20px" }}>Let the community know when and where you need help</h4>
+                    <form>
+                        <h6 style={{ color: "#004d26" }}>Enter date you need volunteers:</h6>
+                        <Date
+                            onChange={handleInputChange}
+                            name="dateAvailable"
+                            placeholder="Date available (required)"
+                        />
+                        <Input
+                            onChange={handleInputChange}
+                            name="eventTitle"
+                            placeholder="Event (required)"
+                        />
+                        <Input
+                            onChange={handleInputChange}
+                            name="eventLocation"
+                            placeholder="Location (required)"
+                        />
+                        <TextArea
+                            onChange={handleInputChange}
+                            name="eventDetails"
+                            placeholder="Details"
+                        />
+                        <div
+                            onChange={handleInputChange}
+                            name="user"
+                            value={user.email}
+
+                        />
+                        <FormBtn
+                            disabled={!(formObject.eventTitle && formObject.eventDetails)}
+                            onClick={handleFormSubmit}
+                        >
+                            post a volunteer opportunity
+              </FormBtn>
+                    </form>
+                </Col>
+                <Col size="md-6 sm-12">
+                    <h4 style={{ textAlign: "center", color: "#004d26", marginBottom: "45px" }}>Checkout the volunteer opportunities posted to the community</h4>
                     {shifts.length ? (
                         <List>
                             {shifts.map(shifts => (
@@ -48,12 +108,13 @@ function CommunityCalendar() {
                             ))}
                         </List>
                     ) : (
-                            <h3>No Results to Display</h3>
+                            <h3 style={{ textAlign: "center", color: "#004d26", marginBottom: "20px" }}>No Shifts to Display</h3>
                         )}
-                </Row>
-            </Container>
-        </div>
-    )
+                </Col>
+            </Row>
+        </Container>
+    );
 }
 
-export default CommunityCalendar;
+
+export default Shifts;

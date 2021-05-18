@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from "react";
-import DeleteBtn from "../components/DeleteBtn";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
@@ -14,6 +13,7 @@ function Resources() {
 
     useEffect(() => {
         loadResources()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     function loadResources() {
@@ -53,7 +53,7 @@ function Resources() {
         < Container fluid >
             <Row>
                 <Col size="md-6">
-                    <h4 style={{ textAlign: "center", color: "#004d26" }}>Post a resource offer to the community</h4>
+                    <h4 style={{ textAlign: "center", color: "#004d26", marginBottom: "20px" }}>Post a resource offer to the community</h4>
                     <form>
                         <h6 style={{ color: "#004d26" }}>Enter date available:</h6>
                         <Date
@@ -87,14 +87,14 @@ function Resources() {
                     </form>
                 </Col>
                 <Col size="md-6 sm-12">
-                    <h4 style={{ textAlign: "center", color: "#004d26", marginBottom: "33px" }}>Checkout the resources made available to the community</h4>
+                    <h4 style={{ textAlign: "center", color: "#004d26", marginBottom: "45px" }}>Checkout the resources made available to the community</h4>
                     {resources.length ? (
                         <List>
                             {resources.map(resources => (
                                 <ListItem key={resources._id}>
                                     <Link to={"/community_resources/" + resources._id}>
                                         <strong>
-                                            available on {resources.dateAvailable}, and {resources.details}
+                                            {resources.details}
                                         </strong>
                                     </Link>
 
@@ -102,7 +102,7 @@ function Resources() {
                             ))}
                         </List>
                     ) : (
-                            <h3 style={{ textAlign: "center", color: "#004d26", marginBottom: "20px" }}>No Results to Display</h3>
+                            <h3 style={{ textAlign: "center", color: "#004d26", marginBottom: "20px" }}>No Resources to Display</h3>
                         )}
                 </Col>
             </Row>
