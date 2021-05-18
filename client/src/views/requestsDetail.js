@@ -24,7 +24,8 @@ function RequestsDetail(props) {
           <h4 style={{
             textAlign: "center",
             marginBottom: "10px",
-            color: "#004d26"
+            color: "#004d26",
+            fontFamily: "'Montserrat', sans-serif"
           }}>
             Need help on {requests.dateAvailable}
           </h4>
@@ -36,14 +37,16 @@ function RequestsDetail(props) {
             <h5 style={{
               textAlign: "center",
               marginBottom: "10px",
-              color: "#004d26"
+              color: "#004d26",
+              fontFamily: "'Montserrat', sans-serif"
             }}>
               Request details:
                         </h5>
             <h6 style={{
               textAlign: "center",
               marginBottom: "10px",
-              color: "#004d26"
+              color: "#004d26",
+              fontFamily: "'Montserrat', sans-serif"
             }}>
               {requests.request}
             </h6>
@@ -52,7 +55,10 @@ function RequestsDetail(props) {
       </Row>
       <Row>
         <Col size="md-12 mt-10"  >
-          <Link to="/requests/" style={{ color: "#004d26" }} >← Back to all your requests</Link>
+          <Link to="/requests/" style={{
+            color: "#004d26",
+            fontFamily: "'Montserrat', sans-serif"
+          }} >← Back to all your requests</Link>
         </Col>
       </Row>
     </Container >

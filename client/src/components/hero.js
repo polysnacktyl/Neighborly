@@ -9,7 +9,8 @@ const Hero = () => (
         color: "var(--forest)",
         fontWeight: "bolder",
         fontSize: "75px",
-        textShadow: "1px 1px var(--smoke)"
+        textShadow: "1px 1px var(--smoke)",
+        fontFamily: "'Montserrat', sans-serif"
       }}>
       Neighborly
     </h1>

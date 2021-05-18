@@ -21,14 +21,16 @@ function ShiftDetails(props) {
           <h4 style={{
             textAlign: "center",
             marginBottom: "10px",
-            color: "#004d26"
+            color: "#004d26",
+            fontFamily: "'Montserrat', sans-serif"
           }}>
             {shift.eventTitle}
           </h4>
           <h5 style={{
             textAlign: "center",
             marginBottom: "10px",
-            color: "#004d26"
+            color: "#004d26",
+            fontFamily: "'Montserrat', sans-serif"
           }}>
             Need help on: {shift.dateAvailable}
           </h5>
@@ -41,19 +43,24 @@ function ShiftDetails(props) {
             <h5 style={{
               textAlign: "center",
               marginBottom: "10px",
-              color: "#004d26"
+              color: "#004d26",
+              fontFamily: "'Montserrat', sans-serif"
             }}>Volunteer event location: {shift.eventLocation}</h5>
             <h6 style={{
               textAlign: "center",
               marginBottom: "10px",
-              color: "#004d26"
+              color: "#004d26",
+              fontFamily: "'Montserrat', sans-serif"
             }}>Volunteer details: {shift.eventDetails}</h6>
           </article>
         </Col>
       </Row>
       <Row>
         <Col size="md-12">
-          <Link to="/shifts/" style={{ color: "#004d26" }} >← Back to all your volunteer opportunities</Link>
+          <Link to="/shifts/" style={{
+            color: "#004d26",
+            fontFamily: "'Montserrat', sans-serif"
+          }} >← Back to all your volunteer opportunities</Link>
         </Col>
       </Row>
     </Container>

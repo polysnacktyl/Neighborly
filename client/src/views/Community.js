@@ -34,7 +34,7 @@ function Community() {
 
                             <div className="card-footer text-center">
                                 <Link to="/community_resources">
-                                    <button className="btn-view">View Resource Offers</button>
+                                    <button className="btn-view">View Offers</button>
                                 </Link>
                             </div>
                             <p className="card-text">Submit a new offer or fulfill an existing offer</p>

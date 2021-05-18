@@ -55,9 +55,15 @@ function Shifts() {
         <Container fluid>
             <Row>
                 <Col size="md-6">
-                    <h4 style={{ textAlign: "center", color: "#004d26", marginBottom: "20px" }}>Let the community know when and where you need help</h4>
+                    <h4 style={{
+                        textAlign: "center", color: "#004d26", marginBottom: "20px",
+                        fontFamily: "'Montserrat', sans-serif"
+                    }}>Let the community know when and where you need help</h4>
                     <form>
-                        <h6 style={{ color: "#004d26" }}>Enter date you need volunteers:</h6>
+                        <h6 style={{
+                            color: "#004d26",
+                            fontFamily: "'Montserrat', sans-serif"
+                        }}>Enter date you need volunteers:</h6>
                         <Date
                             onChange={handleInputChange}
                             name="dateAvailable"
@@ -93,7 +99,10 @@ function Shifts() {
                     </form>
                 </Col>
                 <Col size="md-6 sm-12">
-                    <h4 style={{ textAlign: "center", color: "#004d26", marginBottom: "45px" }}>Checkout the volunteer opportunities posted to the community</h4>
+                    <h4 style={{
+                        textAlign: "center", color: "#004d26", marginBottom: "45px",
+                        fontFamily: "'Montserrat', sans-serif"
+                    }}>Checkout the volunteer opportunities posted to the community</h4>
                     {shifts.length ? (
                         <List>
                             {shifts.map(shifts => (
@@ -108,11 +117,14 @@ function Shifts() {
                             ))}
                         </List>
                     ) : (
-                            <h3 style={{ textAlign: "center", color: "#004d26", marginBottom: "20px" }}>No Shifts to Display</h3>
+                            <h3 style={{
+                                textAlign: "center", color: "#004d26", marginBottom: "20px",
+                                fontFamily: "'Montserrat', sans-serif"
+                            }}>No Shifts to Display</h3>
                         )}
                 </Col>
             </Row>
-        </Container>
+        </Container >
     );
 }
 
