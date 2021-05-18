@@ -17,26 +17,35 @@ function ResourceDetails(props) {
         <Container fluid>
             <Row>
                 <Col size="md-12">
-
-                    <h4>
-                        {resource.dateAvailable}
+                    <h4 style={{
+                        textAlign: "center",
+                        marginBottom: "10px",
+                        color: "#004d26"
+                    }}>
+                        Date Available To Help Out: {resource.dateAvailable}
                     </h4>
-                    <p>status:  {resource.status}</p>
+                    <h5 style={{
+                        textAlign: "center",
+                        marginBottom: "10px",
+                        color: "#004d26"
+                    }}>status:  {resource.status}</h5>
                 </Col>
             </Row>
             <Row>
                 <Col size="md-10 md-offset-1">
                     <article>
-                        <h3>resource offer details</h3>
-                        <p>
-                            {resource.details}
-                        </p>
+                        <h5 style={{
+                            textAlign: "center",
+                            marginBottom: "10px",
+                            color: "#004d26"
+                        }}>resource offer details: {resource.details}</h5>
+
                     </article>
                 </Col>
             </Row>
             <Row>
-                <Col size="md-2">
-                    <Link to="/resources">back to all resources</Link>
+                <Col size="md-12">
+                    <Link to="/resources" style={{ color: "#004d26" }} >←Back to your resources</Link>
                 </Col>
             </Row>
         </Container>

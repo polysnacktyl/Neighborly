@@ -19,11 +19,6 @@ const Footer = () => (
         Email Us
           </a>
 
-
-      <a href="https://venmo.com" target="_blank" rel="noreferrer">
-        Donate Here
-          </a>
-
     </div>
   </div >
 

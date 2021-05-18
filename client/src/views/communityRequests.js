@@ -52,7 +52,7 @@ function Requests() {
         <Container fluid>
             <Row>
                 <Col size="md-6 sm-12">
-                    <h4 style={{ textAlign: "center", color: "#004d26" }}>Post a request to the community</h4>
+                    <h4 style={{ textAlign: "center", color: "#004d26", marginBottom: "20px" }}>Post a request to the community</h4>
                     <form>
                         <h6 style={{ color: "#004d26" }}>Enter date you need help:</h6>
                         <Date
@@ -87,21 +87,21 @@ function Requests() {
                 </Col>
 
                 <Col size="md-6 sm-12">
-                    <h4 style={{ textAlign: "center", color: "#004d26", marginBottom: "33px" }}>Requests made to the community</h4>
+                    <h4 style={{ textAlign: "center", color: "#004d26", marginBottom: "45px" }}>Requests made to the community</h4>
                     {Requests.length ? (
                         <List>
                             {Requests.map(requests => (
                                 <ListItem key={requests._id}>
                                     <Link to={"/community_requests/" + requests._id}>
                                         <strong>
-                                            {requests.title}, {requests.request}
+                                            {requests.title} with {requests.request}
                                         </strong>
                                     </Link>
                                 </ListItem>
                             ))}
                         </List>
                     ) : (
-                            <h3>No Results to Display</h3>
+                            <h3 style={{ textAlign: "center", color: "#004d26", marginBottom: "20px" }}>No Requests to Display</h3>
                         )}
                 </Col>
             </Row>

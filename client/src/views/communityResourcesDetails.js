@@ -17,13 +17,12 @@ function CommunityResourcesDetails(props) {
         <Container fluid>
             <Row>
                 <Col size="md-12">
-
                     <h4 style={{
                         textAlign: "center",
                         marginBottom: "10px",
                         color: "#004d26"
                     }}>
-                        {resource.dateAvailable}
+                        Date Available To Help Out: {resource.dateAvailable}
                     </h4>
                     <h5 style={{
                         textAlign: "center",
@@ -39,14 +38,8 @@ function CommunityResourcesDetails(props) {
                             textAlign: "center",
                             marginBottom: "10px",
                             color: "#004d26"
-                        }}>resource offer details</h5>
-                        <h6 style={{
-                            textAlign: "center",
-                            marginBottom: "10px",
-                            color: "#004d26"
-                        }}>
-                            {resource.details}
-                        </h6>
+                        }}>resource offer details: {resource.details}</h5>
+
                     </article>
                 </Col>
             </Row>
