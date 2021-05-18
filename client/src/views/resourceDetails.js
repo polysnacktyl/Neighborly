@@ -20,14 +20,16 @@ function ResourceDetails(props) {
                     <h4 style={{
                         textAlign: "center",
                         marginBottom: "10px",
-                        color: "#004d26"
+                        color: "#004d26",
+                        fontFamily: "'Montserrat', sans-serif"
                     }}>
                         Date Available To Help Out: {resource.dateAvailable}
                     </h4>
                     <h5 style={{
                         textAlign: "center",
                         marginBottom: "10px",
-                        color: "#004d26"
+                        color: "#004d26",
+                        fontFamily: "'Montserrat', sans-serif"
                     }}>status:  {resource.status}</h5>
                 </Col>
             </Row>
@@ -37,7 +39,8 @@ function ResourceDetails(props) {
                         <h5 style={{
                             textAlign: "center",
                             marginBottom: "10px",
-                            color: "#004d26"
+                            color: "#004d26",
+                            fontFamily: "'Montserrat', sans-serif"
                         }}>resource offer details: {resource.details}</h5>
 
                     </article>
@@ -45,7 +48,10 @@ function ResourceDetails(props) {
             </Row>
             <Row>
                 <Col size="md-12">
-                    <Link to="/resources" style={{ color: "#004d26" }} >←Back to your resources</Link>
+                    <Link to="/resources" style={{
+                        color: "#004d26",
+                        fontFamily: "'Montserrat', sans-serif"
+                    }} >←Back to your resources</Link>
                 </Col>
             </Row>
         </Container>

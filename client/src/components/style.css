@@ -15,6 +15,7 @@
   body {
     background: linear-gradient(to bottom, #99ffcc, #ffffff);
     background-repeat: no-repeat;
+    font-family: 'Montserrat', sans-serif;
   }
 
 .footer {
@@ -26,6 +27,7 @@
       color: var(--pale);
       text-shadow: 1px 1px var(--smoke);
       font-size: 150%;
+      font-family: 'Montserrat', sans-serif;
   }
 
   .footer a {
@@ -45,6 +47,8 @@ font-size: 1.5rem;
 background-color: var(--aqua);
 color: var(--mint);
 text-shadow: 2px 2px var(--forest);
+font-family: 'Montserrat', sans-serif;
+font-weight: 400;
   }
 
 .navbar a {
@@ -76,6 +80,9 @@ text-shadow: 2px 2px var(--forest);
   padding-right: 2.25rem;
   padding-bottom: 1.25rem;
   padding-left: 2.25rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .card-footer {
@@ -113,7 +120,8 @@ text-shadow: 2px 2px var(--forest);
   background-image: url("../images/background.png");
   box-shadow: inset 0px 0px 8px var(--smoke), 0 0 15px var(--orchid);
   color: var(--pale);
-    text-shadow: 2px 2px var(--forest);
+    /* text-shadow: 2px 2px var(--forest); */
+    font-weight: 500;
 }
 
 .btn-view:hover {
@@ -127,6 +135,7 @@ text-shadow: 2px 2px var(--forest);
   color: var(--forest);
   text-shadow: 1px 1px var(--smoke);
   margin-bottom: 50px;
+  font-family: 'Montserrat', sans-serif;
   
 }
 

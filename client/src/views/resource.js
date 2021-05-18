@@ -38,7 +38,10 @@ function Resources() {
             <Row>
 
                 <Col className="list" size="md-6 sm-12">
-                    <h4 style={{ textAlign: "center", color: "#004d26", marginBottom: "40px", marginTop: "40px" }}> {user.given_name}'s resource offers made to the community</h4>
+                    <h4 style={{
+                        textAlign: "center", color: "#004d26", marginBottom: "40px", marginTop: "40px",
+                        fontFamily: "'Montserrat', sans-serif"
+                    }}> {user.given_name}'s resource offers made to the community</h4>
                     {resources.length ? (
                         <List >
                             {resources.map(resources => (
@@ -53,7 +56,10 @@ function Resources() {
                             ))}
                         </List>
                     ) : (
-                            <h3 style={{ textAlign: "center", color: "#004d26", marginTop: "100px" }}>No Resources to Display</h3>
+                            <h3 style={{
+                                textAlign: "center", color: "#004d26", marginTop: "100px",
+                                fontFamily: "'Montserrat', sans-serif"
+                            }}>No Resources to Display</h3>
                         )}
                 </Col>
             </Row>
