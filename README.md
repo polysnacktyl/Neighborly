@@ -19,7 +19,7 @@ If you want to use this program on the front end then simply click on the link i
 
 ## Finished project
 
-images | image | image
+landing page | create posts | post details
 ------------ | ------------- | -------------
 ![image](https://raw.githubusercontent.com/polysnacktyl/project3/amanda/images/Screen%20Shot%202021-05-20%20at%209.34.44%20AM.png)| ![image](https://raw.githubusercontent.com/polysnacktyl/project3/amanda/images/Screen%20Shot%202021-05-20%20at%209.41.15%20AM.png) | ![image](https://raw.githubusercontent.com/polysnacktyl/project3/amanda/images/Screen%20Shot%202021-05-20%20at%209.47.30%20AM.png)
 
