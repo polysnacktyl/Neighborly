@@ -19,12 +19,12 @@ If you want to use this program on the front end then simply click on the link i
 
 ## Finished project
 
- <img src="./client/src/images/neighborly-homepage.png" alt="neighborly home page">
- <img src="./client/src/images/neighborly-userdashboard.png"alt="neighborly user page">
- <img src="./client/src/images/neighborly-communitydashboard.png" alt="neighborly community page">
+images | image | image
+------------ | ------------- | -------------
+![image](/img)| ![image](/img) | ![image](/img)
 
+![image](/img)
 
- 
 
 ## Features
 <ul>
