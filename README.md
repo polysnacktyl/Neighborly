@@ -1,5 +1,5 @@
 # Neighborly
-<a href="https://dashboard.heroku.com/apps/infinite-forest-58133">Experience Neighborly on Heroku</a></li>
+<a href="https://infinite-forest-58133.herokuapp.com/">Experience Neighborly on Heroku</a></li>
 
 ## The Team
 [Tonya Fletcher](https://github.com/tfletch3018)
